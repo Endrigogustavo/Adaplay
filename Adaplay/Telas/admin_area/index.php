@@ -246,8 +246,6 @@ if (!isset($_SESSION['admin_email'])) {
                         include("user_delete.php");
                     }
 
-
-
                     if (isset($_GET['user_profile'])) {
 
                         include("user_profile.php");
@@ -271,26 +269,6 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['edit_box'])) {
 
                         include("edit_box.php");
-                    }
-
-                    if (isset($_GET['insert_term'])) {
-
-                        include("insert_term.php");
-                    }
-
-                    if (isset($_GET['view_terms'])) {
-
-                        include("view_terms.php");
-                    }
-
-                    if (isset($_GET['delete_term'])) {
-
-                        include("delete_term.php");
-                    }
-
-                    if (isset($_GET['edit_term'])) {
-
-                        include("edit_term.php");
                     }
 
                     if (isset($_GET['edit_css'])) {
@@ -436,27 +414,6 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isset($_GET['edit_about_us'])) {
 
                         include("edit_about_us.php");
-                    }
-
-
-                    if (isset($_GET['insert_store'])) {
-
-                        include("insert_store.php");
-                    }
-
-                    if (isset($_GET['view_store'])) {
-
-                        include("view_store.php");
-                    }
-
-                    if (isset($_GET['delete_store'])) {
-
-                        include("delete_store.php");
-                    }
-
-                    if (isset($_GET['edit_store'])) {
-
-                        include("edit_store.php");
                     }
 
                     ?>

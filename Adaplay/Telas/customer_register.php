@@ -2,11 +2,24 @@
 
 session_start();
 
+  //Variáveis de Link
+$index= "index.php";
+$register = "#";
+$conta = "customer/my_account.php?my_orders";
+$cart = "cart.php";
+$favorites = "customer/my_account.php?my_wishlist";
+$products = "shop.php";
+$contato = "contact.php";
+$logout = "logout.php";
+$checkout = "checkout.php";
+
+
 include("includes/db.php");
 
 include("includes/header.php");
 include("functions/functions.php");
 include("includes/main.php");
+
 
 
 ?>
@@ -50,34 +63,34 @@ include("includes/main.php");
           </label>
 
 
-          <div id="meter_wrapper"><!-- meter_wrapper Starts -->
+          <div id="meter_wrapper"><!-- Início de wrapper do medidor de senha -->
 
             <span id="pass_type"> </span>
 
             <div id="meter"> </div>
             <div class="input-group">
-            </div><!-- meter_wrapper Ends -->
+            </div><!-- Fim de wrapper do medidor de senha -->
 
 
-          </div><!-- input-group Ends -->
+          </div><!-- Fim de grupo de entrada -->
 
-        </div><!-- form-group Ends -->
+        </div><!-- Fim de grupo de formulário -->
 
 
 
         <div class="form-group">
 
 
-          <div class="input-group"><!-- input-group Starts -->
+          <div class="input-group"><!-- Início de grupo de entrada -->
 
 
 
-            </span><!-- input-group-addon Ends -->
+            </span><!-- Complemento do grupo de entrada termina -->
 
 
-          </div><!-- input-group Ends -->
+          </div><!-- Fim do grupo de entrada -->
 
-        </div><!-- form-group Ends -->
+        </div><!-- Fim do Formulário -->
 
 
 

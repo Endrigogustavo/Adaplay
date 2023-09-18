@@ -317,6 +317,24 @@ body {
   margin-top: 40px;
 }
 
+@media (max-width: 1000px) {
+  #content #productMain .price {
+   font-size: 26px;
+  }
+}
+
+@media (max-width: 698px) {
+  #content #productMain .price {
+   font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  #content #productMain .price {
+   font-size: 30px;
+  }
+}
+
 #content #mainImage {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
 }

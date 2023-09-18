@@ -103,7 +103,7 @@ if (!isset($_SESSION['admin_email'])) {
 
                                     $row_products = mysqli_fetch_array($run_products);
 
-                                    $product_title = $row_products['product_title'];
+                                     $product_title = $row_products['product_title'];
 
                                     $i++;
 

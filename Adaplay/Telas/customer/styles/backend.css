@@ -384,7 +384,6 @@ body {
 }
 
 .container {
-  width: 1170px;
   margin: 0 auto;
 }
 
@@ -1225,6 +1224,7 @@ nav {
   font-weight: bold;
   border-radius: 100%;
   display: flex;
+  transform: translateX(-50%);
 }
 
 .Carrinho p:hover {
@@ -1244,7 +1244,7 @@ nav {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 820px) {
   #menu-icon {
     display: flex;
     transition: 0.3s;
@@ -1280,7 +1280,7 @@ nav {
     width: 300px;
     height: 130vh;
     background: var(--color-secundaria);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: first baseline;
     padding: 0px 30px;
@@ -1298,6 +1298,7 @@ nav {
   }
 
   .navmenuzin.open {
+    display: flex;
     right: 0;
   }
 

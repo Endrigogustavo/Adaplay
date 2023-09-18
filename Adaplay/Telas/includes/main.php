@@ -1,3 +1,5 @@
+<!--Funciona com base  de Variável, aqui só possuí o comando pra puxar, pois as variáveis estão em cada página devido a "Customer". -->
+
 <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 
@@ -14,9 +16,9 @@
         <li class="login__item">
           <?php
           if (!isset($_SESSION['customer_email'])) {
-            echo '<a href="customer_register.php" class="login__link">Registrar</a>';
+            echo '<a href="'.$register.'" class="login__link">Registrar</a>';
           } else {
-            echo '<a href="customer/my_account.php?my_orders" class="login__link">Minha Conta</a>';
+            echo '<a href="'.$conta.'" class="login__link">Minha Conta</a>';
           }
           ?>
         </li>
@@ -25,9 +27,9 @@
         <li class="login__item">
           <?php
           if (!isset($_SESSION['customer_email'])) {
-            echo '<a href="checkout.php" class="login__link">Entrar</a>';
+            echo '<a href="'.$checkout.'" class="login__link">Entrar</a>';
           } else {
-            echo '<a href="./logout.php" class="login__link">Sair</a>';
+            echo '<a href="'.$logout.'" class="login__link">Sair</a>';
           }
           ?>
 
@@ -41,13 +43,13 @@
 
 
       <div class="logozinha">
-        <a href="index.php" class="logo"><img src="images/logo2.png" alt=""></a>
+        <a href="<?php echo $index?>" class="logo"><img src="images/logo2.png" alt=""></a>
       </div>
 
       <ul class="navmenuzin">
-        <li><a href="index.php">Home</a></li>
+        <li><a href="<?php echo $index?>">Home</a></li>
         <li><a href="#">Lançamentos</a></li>
-        <li id="dropdownzinho"><a href="customer/my_account.php?my_orders">Minha Conta<i class='bx bx-chevron-down'></i></a>
+        <li id="dropdownzinho"><a href="#">Minha Conta<i class='bx bx-chevron-down'></i></a>
 
           <ul>
             <li><?php
@@ -57,14 +59,14 @@
                   echo "<p>Seja Bem-Vindo : " . $_SESSION['customer_email'] . "</p>";
                 }
                 ?></li>
-            <li><a href="#">Configurações da Conta</a></li>
-            <li><a href="#">Lista de Desejos</a></li>
+            <li><a href="<?php echo $conta?>">Configurações da Conta</a></li>
+            <li><a href="<?php echo $favorites?>">Lista de Desejos</a></li>
           </ul>
 
         </li>
 
-        <li><a href="shop.php">Produtos</a></li>
-        <li><a href="contact.php">Fale Conosco</a></li>
+        <li><a href="<?php echo $products?>">Produtos</a></li>
+        <li><a href="<?php echo $contato?>">Fale Conosco</a></li>
       </ul>
 
       <div class="nav-icon">
@@ -73,10 +75,10 @@
 
 
 
-        <a href="#"><i class='bx bx-heart'></i></a>
+        <a href="<?php echo $favorites?>"><i class='bx bx-heart'></i></a>
 
         <div class="Carrinho">
-          <a href="cart.php"><i class='bx bx-shopping-bag'></i> </a>
+          <a href="<?php echo $cart?>"><i class='bx bx-shopping-bag'></i> </a>
           <p><?php items(); ?></p>
         </div>
 

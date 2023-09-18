@@ -10,6 +10,8 @@ include("functions/functions.php");
 
 <?php
 
+//Caso vocês esqueçam, aqui está a explicação deste código: 
+//Este código PHP lida com a atualização da quantidade de um item no carrinho de compras de um usuário.
 
 $ip_add = getRealUserIp();
 

@@ -67,7 +67,7 @@ if (isset($_REQUEST['cat']) && is_array($_REQUEST['cat'])) {
 
                     <span class="nav-toggle hide-show">
 
-                        Esconder
+                        Hide
 
                     </span>
 
@@ -231,7 +231,7 @@ $manufacturer_title
 
                     <span class="nav-toggle hide-show">
 
-                        Esconder
+                        Hide
 
                     </span>
 
@@ -389,7 +389,7 @@ $p_cat_title
 
                     <span class="nav-toggle hide-show">
 
-                        Esconder
+                        Hide
 
                     </span>
 

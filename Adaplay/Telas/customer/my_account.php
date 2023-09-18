@@ -6,6 +6,18 @@ if (!isset($_SESSION['customer_email'])) {
 
   echo "<script>window.open('../checkout.php','_self')</script>";
 } else {
+     //Variáveis de Link
+     $index= "../index.php";
+     $register = "../customer_register.php";
+     $conta = "my_account.php?my_orders";
+     $cart = "../cart.php";
+     $favorites = "my_account.php?my_wishlist";
+     $products = "../shop.php";
+     $contato = "../contact.php";
+     $logout = "../logout.php";
+     $checkout = "../checkout.php";
+
+
 
   include("../includes/db.php");
   include("../includes/header.php");
@@ -13,12 +25,13 @@ if (!isset($_SESSION['customer_email'])) {
   include("../includes/main.php");
 
 
+
 ?>
   <main>
     <!-- HERO -->
     <div class="nero">
       <div class="nero__heading">
-        <span class="nero__bold">My </span>Account
+        <span class="nero__bold">Minha </span>Conta
       </div>
       <p class="nero__text">
       </p>

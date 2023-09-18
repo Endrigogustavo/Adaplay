@@ -117,11 +117,11 @@
 	</div>
 
 	<div class="developer">
-	  ADAPLAY and Others
+	All Rights Reserved
 	</div>
 
 	<div class="designby">
-	  ADAPLAY and Others
+	  ADAPLAY
 	</div>
 
   </div>

@@ -1,10 +1,10 @@
 <center><!-- center Starts -->
 
-    <h1> Pay OffLine Using Method </h1>
+    <h1> Método de (Pagar Offline) </h1>
 
     <p class="text-muted">
 
-        If you have any questions, please feel free to <a href="../contact.php">contact us,</a> our customer service center is working for you 24/7.
+    Se você tiver alguma dúvida, sinta-se à vontade para entrar em  <a href="../contact.php"> contato  </a> conosco, nosso centro de atendimento ao cliente está trabalhando para você 24 horas por dia, 7 dias por semana.
 
     </p>
 

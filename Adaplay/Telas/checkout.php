@@ -2,10 +2,24 @@
 
 session_start();
 
+//Variáveis de Link
+$index= "index.php";
+$register = "customer_register.php";
+$conta = "customer/my_account.php?my_orders";
+$cart = "cart.php";
+$favorites = "customer/my_account.php?my_wishlist";
+$products = "shop.php";
+$contato = "contact.php";
+$logout = "logout.php";
+$checkout = "#";
+
+
 include("includes/db.php");
 include("includes/header.php");
 include("functions/functions.php");
 include("includes/main.php");
+
+
 
 ?>
 
@@ -14,13 +28,13 @@ include("includes/main.php");
 
 
 
-<div id="content"><!-- content Starts -->
-  <div class="container"><!-- container Starts -->
+<div id="content"><!-- Início da classe Content -->
+  <div class="container"><!-- Início da classe Container -->
 
 
 
 
-    <div class="col-md-12"><!-- col-md-12 Starts -->
+    <div class="col-md-12"><!-- início da col-md-12  -->
 
       <?php
 
@@ -37,11 +51,11 @@ include("includes/main.php");
       ?>
 
 
-    </div><!-- col-md-12 Ends -->
+    </div><!-- Fim da col-md-12 -->
 
 
-  </div><!-- container Ends -->
-</div><!-- content Ends -->
+  </div><!-- Fim do Container -->
+</div><!-- Fim do content -->
 
 
 

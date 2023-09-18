@@ -1,8 +1,8 @@
 <center><!-- center Starts -->
 
-    <h1> My Wishlist </h1>
+    <h1> Minha Lista de Desenjos </h1>
 
-    <p class="lead"> Your all Wishlist Products on one place. </p>
+    <p class="lead"> Todos os seus produtos da lista de desejos em um só lugar. </p>
 
 </center><!-- center Ends -->
 
@@ -16,11 +16,11 @@
 
             <tr>
 
-                <th> Wishlist No: </th>
+                <th> Lista de Desejos: </th>
 
-                <th> Wishlist Product </th>
+                <th> Produto da Lista de Desejos </th>
 
-                <th> Delete Wishlist </th>
+                <th> Deletar da Lista </th>
 
             </tr>
 

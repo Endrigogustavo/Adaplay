@@ -7,10 +7,25 @@ if (!isset($_SESSION['customer_email'])) {
     echo "<script>window.open('../checkout.php','_self')</script>";
 } else {
 
+    //Variáveis de Link
+    $index= "../index.php";
+    $register = "../customer_register.php";
+    $conta = "my_account.php?my_orders";
+    $cart = "../cart.php";
+    $favorites = "my_account.php?my_wishlist";
+    $products = "../shop.php";
+    $contato = "../contact.php";
+    $logout = "../logout.php";
+    $checkout = "../checkout.php";
+
+
     include("../includes/db.php");
     include("../includes/header.php");
     include("functions/functions_MinhaConta.php");
     include("../includes/main.php");
+
+    
+
 
     if (isset($_GET['order_id'])) {
         $order_id = $_GET['order_id'];

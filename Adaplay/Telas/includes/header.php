@@ -9,9 +9,12 @@
 
   <link rel="icon" href="images/logo2.png">
   <title>ADAPLAY</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link href="styles/bootstrap.css" rel="stylesheet">
   <link href="styles/bootstrap.min.css" rel="stylesheet">
   <link href="styles/backend.css" rel="stylesheet">
   <link href="styles/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/Home.css">
 
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 

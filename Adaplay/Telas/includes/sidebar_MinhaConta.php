@@ -46,7 +46,7 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?my_orders"> <i class="fa fa-list"> </i> My Orders </a>
+                <a href="my_account.php?my_orders"> <i class="fa fa-list"> </i> Meus Pagamentos </a>
 
             </li>
 
@@ -54,7 +54,7 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?pay_offline"> <i class="fa fa-bolt"></i> Pay Offline </a>
+                <a href="my_account.php?pay_offline"> <i class="fa fa-bolt"></i> Método (Pagar Offline) </a>
 
             </li>
 
@@ -62,7 +62,7 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?edit_account"> <i class="fa fa-pencil"></i> Edit Account </a>
+                <a href="my_account.php?edit_account"> <i class="fa fa-pencil"></i> Editar Conta </a>
 
             </li>
 
@@ -70,7 +70,7 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?change_pass"> <i class="fa fa-user"></i> Change Password </a>
+                <a href="my_account.php?change_pass"> <i class="fa fa-user"></i> Alterar Senha </a>
 
             </li>
 
@@ -78,7 +78,7 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?my_wishlist"> <i class="fa fa-heart"></i> My WishList </a>
+                <a href="my_account.php?my_wishlist"> <i class="fa fa-heart"></i> Minha Lista de Desejos </a>
 
             </li>
 
@@ -86,13 +86,13 @@
                             echo "active";
                         } ?>">
 
-                <a href="my_account.php?delete_account"> <i class="fa fa-trash-o"></i> Delete Account </a>
+                <a href="my_account.php?delete_account"> <i class="fa fa-trash-o"></i> Deletar Conta </a>
 
             </li>
 
             <li>
 
-                <a href="logout.php"> <i class="fa fa-sign-out"></i> Logout </a>
+                <a href="logout.php"> <i class="fa fa-sign-out"></i> Sair </a>
 
             </li>
 

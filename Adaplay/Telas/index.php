@@ -2,6 +2,18 @@
 
 session_start();
 
+//Variáveis de Link
+$index= "#";
+$register = "customer_register.php";
+$conta = "customer/my_account.php?my_orders";
+$cart = "cart.php";
+$favorites = "customer/my_account.php?my_wishlist";
+$products = "shop.php";
+$contato = "contact.php";
+$logout = "logout.php";
+$checkout = "checkout.php";
+
+
 include("includes/db.php");
 include("includes/header.php");
 include("functions/functions.php");
@@ -11,24 +23,153 @@ include("includes/main.php");
 
 <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-<!-- Cover -->
-<main>
-  <div class="hero">
-    <a href="shop.php" class="btn1">Visualizar Produtos
-    </a>
-  </div>
-  <!-- Main -->
+
+<!-- Cobrir -->
+
+ 
+  <section class="carouselbanner swiper mySwiper">
+      <div class="wrapperzin swiper-wrapper">
+
+        <div class="slide swiper-slide">
+          <img src="images/1.png" alt="" class="image" />
+          <div class="image-data">
+                <h2>AdaPlay </h2>    
+                <span class="text">Fazendo o mundo um lugar mais inclusivo para todos</span>
+                <br>
+                <a href="about.php" class="button">Sobre Nós</a>
+          </div>
+        </div>
+
+        <div class="slide swiper-slide">
+          <img src="images/2.jpg" alt="" class="image" />
+          <div class="image-data">
+                <h2>Bandai Namco</h2>    
+                <span class="text">Direto da terra do Sol nascente pro Ociente, aproveite agora os lançamentos </span>
+                <br>
+                <a href="shop.php" class="button">Confira</a>
+          </div>
+        </div>
+
+        <div class="slide swiper-slide">
+          <img src="images/3.jpg" alt="" class="image" />
+          <div class="image-data">
+            <h2>Brinquedos Adaptados </h2>    
+            <span class="text">Não existe nada como a imaginação de uma criança, e por isso não deve ser impedida</span>
+            <br>
+            <a href="shop.php" class="button">Confira</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="swiper-button-next nav-btn"></div>
+      <div class="swiper-button-prev nav-btn"></div>
+      <div class="swiper-pagination"></div>
+    </section>
+
+    
+    <div class="logosom">
+      <div class="logosom-slide">
+        <img src="images/logos/1.png" />
+        <img src="images/logos/2.png" />
+        <img src="images/logos/3.png" />
+        <img src="images/logos/4.png" />
+        <img src="images/logos/5.png" />
+        <img src="images/logos/6.png" />
+        <img src="images/logos/7.png" />
+        <img src="images/logos/8.png" />
+      </div>
+    </div>
+   
+<section class="simplecards">
+      <div class="textosin">
+            <h1>Categorias</h1>
+      </div>
+    <div class="categorias">
+                  
+                    <div class="card">
+                       
+                    <div class="card-content">
+                            
+                                <h1>Adaptados</h1>
+                                <p>Brinque sem Limites</p>
+                                <a href="shop.php"><i class='bx bx-chevron-right'></i></a>
+                                
+                        </div> 
 
 
+                        <div class="card-img">
+                            <img src="images/cards/card1.png" id="bugmaldito">
 
-  <div class="wrapper">
-    <h1>Coleção em Destaque<h1>
+                        </div>
 
-  </div>
+                    </div>
 
-  <div id="content" class="container"><!-- container Starts -->
+                    <div class="card">
+                        
+                        <div class="card-content">
+                            
+                                <h1>Super Herói</h1>
+                                <p>Brinque com Imaginação</p>
+                                <a href="shop.php"><i class='bx bx-chevron-right'></i></a>
 
-    <div class="row"><!-- row Starts -->
+                        </div>
+
+                        <div class="card-img">
+                            <img src="images/cards/card2.png">
+
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                       
+                        <div class="card-content">
+                            
+                                <h1>Esportes</h1>
+                                <p>Brinque como profissional</p>
+                                <a href="shop.php"><i class='bx bx-chevron-right'></i></a>
+
+                        </div>
+
+
+                        <div class="card-img">
+                            <img src="images/cards/card3.png" id="bugmaldito">
+
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                       
+                        <div class="card-content">
+                            
+                                <h1>Recém Lançados</h1>
+                                <p>Brinque com novidade</p>
+                                <a href="shop.php"><i class='bx bx-chevron-right'></i></a>
+
+                        </div>
+
+
+                        <div class="card-img">
+                            <img src="images/cards/card4.png" id="bugmaldito">
+
+                        </div>
+
+                    </div>
+
+
+            </div>
+</section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/home.js"></script>
+
+  <br>
+  <div id="content" class="container"><!-- Início do Container -->
+
+    <div class="row"><!-- Início da Coluna -->
 
       <?php
 
@@ -36,9 +177,12 @@ include("includes/main.php");
 
       ?>
 
-    </div><!-- row Ends -->
+    </div><!-- Fim da Coluna -->
 
-  </div><!-- container Ends -->
+  </div><!-- Fim do Container -->
+
+
+
   <!-- FOOTER -->
   <footer class="page-footer">
 
@@ -159,11 +303,11 @@ include("includes/main.php");
         </div>
 
         <div class="developer">
-          ADAPLAY and Others
+          All Rights Reserved
         </div>
 
         <div class="designby">
-          ADAPLAY and Others
+          ADAPLAY 
         </div>
 
       </div>

@@ -67,7 +67,7 @@ function total_price()
     $total += $sub_total;
   }
 
-  echo "$" . $total;
+  echo "R$" . $total;
 }
 
 
@@ -111,16 +111,16 @@ function getPro()
 
     $pro_url = $row_products['product_url'];
 
-    if ($pro_label == "Sale" or $pro_label == "Gift") {
+    if ($pro_label == "Oferta" or $pro_label == "Presente") {
 
-      $product_price = "<del> $$pro_price </del>";
+      $product_price = "<del> R$$pro_price </del>";
 
-      $product_psp_price = "| $$pro_psp_price";
+      $product_psp_price = "| R$$pro_psp_price";
     } else {
 
       $product_psp_price = "";
 
-      $product_price = "$$pro_price";
+      $product_price = "R$$pro_price";
     }
 
 
@@ -169,13 +169,8 @@ function getPro()
 
 <p class='buttons' >
 
-<a href='$pro_url' class='btn btn-default' >View Details</a>
+<a href='$pro_url' class='btn btn-danger'>Detalhes do Produto</a>
 
-<a href='$pro_url' class='btn btn-danger'>
-
-<i class='fa fa-shopping-cart'></i> Add To Cart
-
-</a>
 
 
 </p>
@@ -299,16 +294,16 @@ function getProducts()
     $pro_url = $row_products['product_url'];
 
 
-    if ($pro_label == "Sale" or $pro_label == "Gift") {
+    if ($pro_label == "Oferta" or $pro_label == "Presente") {
 
-      $product_price = "<del> $$pro_price </del>";
+      $product_price = "<del> R$$pro_price </del>";
 
-      $product_psp_price = "| $$pro_psp_price";
+      $product_psp_price = "| R$$pro_psp_price";
     } else {
 
       $product_psp_price = "";
 
-      $product_price = "$$pro_price";
+      $product_price = "R$$pro_price";
     }
 
 
@@ -357,14 +352,7 @@ function getProducts()
 
 <p class='buttons' >
 
-<a href='$pro_url' class='btn btn-default' >View details</a>
-
-<a href='$pro_url' class='btn btn-danger'>
-
-<i class='fa fa-shopping-cart' data-price=$pro_price></i> Add To Cart
-
-</a>
-
+<a href='$pro_url' class='btn btn-danger' >Detalhes do Produto</a>
 
 </p>
 

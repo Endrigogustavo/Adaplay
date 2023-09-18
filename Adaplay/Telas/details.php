@@ -2,10 +2,23 @@
 
 session_start();
 
+  //Variáveis de Link
+$index= "index.php";
+$register = "customer_register.php";
+$conta = "customer/my_account.php?my_orders";
+$cart = "cart.php";
+$favorites = "customer/my_account.php?my_wishlist";
+$products = "shop.php";
+$contato = "contact.php";
+$logout = "logout.php";
+$checkout = "checkout.php";
+
 include("includes/db.php");
 include("includes/header.php");
 include("functions/functions.php");
 include("includes/main.php");
+
+
 
 ?>
 
@@ -125,21 +138,21 @@ if ($check_product == 0) {
                 <div class="carousel-inner"><!-- carousel-inner Starts -->
 
                   <div class="item active">
-                    <center>
-                      <img src="admin_area/product_images/<?php echo $pro_img1; ?>" class="img-responsive">
-                    </center>
+
+                    <img src="admin_area/product_images/<?php echo $pro_img1; ?>" class="img-responsive">
+
                   </div>
 
                   <div class="item">
-                    <center>
-                      <img src="admin_area/product_images/<?php echo $pro_img2; ?>" class="img-responsive">
-                    </center>
+
+                    <img src="admin_area/product_images/<?php echo $pro_img2; ?>" class="img-responsive">
+
                   </div>
 
                   <div class="item">
-                    <center>
-                      <img src="admin_area/product_images/<?php echo $pro_img3; ?>" class="img-responsive">
-                    </center>
+
+                    <img src="admin_area/product_images/<?php echo $pro_img3; ?>" class="img-responsive">
+
                   </div>
 
                 </div><!-- carousel-inner Ends -->
@@ -148,7 +161,7 @@ if ($check_product == 0) {
 
                   <span class="glyphicon glyphicon-chevron-left"> </span>
 
-                  <span class="sr-only"> Previous </span>
+                  <span class="sr-only"> Anterior </span>
 
                 </a><!-- left carousel-control Ends -->
 
@@ -156,7 +169,7 @@ if ($check_product == 0) {
 
                   <span class="glyphicon glyphicon-chevron-right"> </span>
 
-                  <span class="sr-only"> Next </span>
+                  <span class="sr-only"> Próximo </span>
 
                 </a><!-- right carousel-control Ends -->
 
@@ -195,7 +208,7 @@ if ($check_product == 0) {
 
                 if (mysqli_num_rows($run_check) > 0) {
 
-                  echo "<script>alert('This Product is already added in cart')</script>";
+                  echo "<script>alert('Este produto já está adicionado ao carrinho.')</script>";
 
                   echo "<script>window.open('$pro_url','_self')</script>";
                 } else {
@@ -212,7 +225,7 @@ if ($check_product == 0) {
 
                   $pro_label = $row_price['product_label'];
 
-                  if ($pro_label == "Sale" or $pro_label == "Gift") {
+                  if ($pro_label == "Oferta" or $pro_label == "Presente") {
 
                     $product_price = $pro_psp_price;
                   } else {
@@ -351,15 +364,14 @@ if ($check_product == 0) {
 
 
 
-                  if ($pro_label == "Sale" or $pro_label == "Gift") {
+                  if ($pro_label == "Oferta" or $pro_label == "Presente") {
 
                     echo "
 
 <p class='price'>
+Preço Antigo : <del> R$$pro_price </del><br>
 
-Product Price : <del> $$pro_price </del><br>
-
-Product sale Price : $$pro_psp_price
+Preço Atual : R$$pro_psp_price
 
 </p>
 
@@ -370,7 +382,7 @@ Product sale Price : $$pro_psp_price
 
 <p class='price'>
 
-Product Price : $$pro_price
+Preço: R$$pro_price
 
 </p>
 
@@ -379,15 +391,15 @@ Product Price : $$pro_price
                 } else {
 
 
-                  if ($pro_label == "Sale" or $pro_label == "Gift") {
+                  if ($pro_label == "Oferta" or $pro_label == "Presente") {
 
                     echo "
 
 <p class='price'>
 
-Bundle Price : <del> $$pro_price </del><br>
+Preço Antigo : <del> R$$pro_price </del><br>
 
-Bundle sale Price : $$pro_psp_price
+Preço Atual : R$$pro_psp_price
 
 </p>
 
@@ -398,7 +410,7 @@ Bundle sale Price : $$pro_psp_price
 
 <p class='price'>
 
-Bundle Price : $$pro_price
+Preço do Pacote: $$pro_price
 
 </p>
 
@@ -412,13 +424,13 @@ Bundle Price : $$pro_price
 
                   <button class="btn btn-danger" type="submit" name="add_cart">
 
-                    <i class="fa fa-shopping-cart"></i> Add ao Carrinho
+                    <i class="fa fa-shopping-cart"></i> Adicionar ao Carrinho
 
                   </button>
 
                   <button class="btn btn-warning" type="submit" name="add_wishlist">
 
-                    <i class="fa fa-heart"></i> Add a Lista de Desejos
+                    <i class="fa fa-heart"></i> Adicionar a Lista de Desejos
 
                   </button>
 
@@ -429,7 +441,7 @@ Bundle Price : $$pro_price
 
                     if (!isset($_SESSION['customer_email'])) {
 
-                      echo "<script>alert('You Must Login To Add Product In Wishlist')</script>";
+                      echo "<script>alert('Você deve fazer login para adicionar o produto à lista de desejos.')</script>";
 
                       echo "<script>window.open('checkout.php','_self')</script>";
                     } else {
@@ -452,7 +464,7 @@ Bundle Price : $$pro_price
 
                       if ($check_wishlist == 1) {
 
-                        echo "<script>alert('This Product Has Been already Added In Wishlist')</script>";
+                        echo "<script>alert('Este produto já foi adicionado à lista de desejos.')</script>";
 
                         echo "<script>window.open('$pro_url','_self')</script>";
                       } else {
@@ -463,7 +475,7 @@ Bundle Price : $$pro_price
 
                         if ($run_wishlist) {
 
-                          echo "<script> alert('Product Has Inserted Into Wishlist') </script>";
+                          echo "<script> alert('O produto foi inserido na lista de desejos.') </script>";
 
                           echo "<script>window.open('$pro_url','_self')</script>";
                         }
@@ -529,10 +541,10 @@ Bundle Price : $$pro_price
 
             if ($status == "product") {
 
-              echo "Product Description";
+              echo "Descrição do Produto";
             } else {
 
-              echo "Bundle Description";
+              echo "Descrição do Pacote";
             }
 
             ?>
@@ -541,13 +553,13 @@ Bundle Price : $$pro_price
 
           <a class="btn btn-info tab" style="margin-bottom:10px;" href="#features" data-toggle="tab"><!-- btn btn-primary tab Starts -->
 
-            Features
+            Características
 
           </a><!-- btn btn-primary tab Ends -->
 
           <a class="btn btn-info tab" style="margin-bottom:10px;" href="#video" data-toggle="tab"><!-- btn btn-primary tab Starts -->
 
-            Sounds and Videos
+            Sons e Vídeos
 
           </a><!-- btn btn-primary tab Ends -->
 
@@ -631,16 +643,16 @@ Bundle Price : $$pro_price
               $pro_url = $row_products['product_url'];
 
 
-              if ($pro_label == "Sale" or $pro_label == "Gift") {
+              if ($pro_label == "Oferta" or $pro_label == "Presente") {
 
-                $product_price = "<del> $$pro_price </del>";
+                $product_price = "<del> R$$pro_price </del>";
 
-                $product_psp_price = "| $$pro_psp_price";
+                $product_psp_price = "| R$$pro_psp_price";
               } else {
 
                 $product_psp_price = "";
 
-                $product_price = "$$pro_price";
+                $product_price = "R$$pro_price";
               }
 
 
@@ -689,14 +701,7 @@ Bundle Price : $$pro_price
 
 <p class='buttons' >
 
-<a href='$pro_url' class='btn btn-default' >View Details</a>
-
-<a href='$pro_url' class='btn btn-danger'>
-
-<i class='fa fa-shopping-cart'></i> Add To Cart
-
-</a>
-
+<a href='$pro_url' class='btn btn-danger' >Detalhes do Produto</a>
 
 </p>
 
@@ -764,16 +769,16 @@ $product_label
                 $pro_url = $row_products['product_url'];
 
 
-                if ($pro_label == "Sale" or $pro_label == "Gift") {
+                if ($pro_label == "Oferta" or $pro_label == "Presente") {
 
-                  $product_price = "<del> $$pro_price </del>";
+                  $product_price = "<del> R$$pro_price </del>";
 
-                  $product_psp_price = "| $$pro_psp_price";
+                  $product_psp_price = "| R$$pro_psp_price";
                 } else {
 
                   $product_psp_price = "";
 
-                  $product_price = "$$pro_price";
+                  $product_price = "R$$pro_price";
                 }
 
 

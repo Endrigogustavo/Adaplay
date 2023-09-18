@@ -1,5 +1,6 @@
 <?php
 
+//O pagamento no PayPal não está funcionando no momento. (Talvez seja desconsiderado esse método de pagamento)
 
 include("includes/db.php");
 
