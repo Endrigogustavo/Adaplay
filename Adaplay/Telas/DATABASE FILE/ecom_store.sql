@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `ecom_store`
 --
-create database `ecom_store`;
-use `ecom_store`;
+create database `ecom_store`
+use `ecom_store`
 
 -- --------------------------------------------------------
 

@@ -97,7 +97,7 @@ main form label {
 
 .text {
     background: #11111f;
-    width: 500px;
+    width: 170%;
     height: 50px;
     padding: 0 0.5rem;
     margin-top: 1rem;
@@ -162,6 +162,18 @@ section.images .circle {
     section.images img {
         width: 110%;
     }
+    .text {
+        background: #11111f;
+        width: 150%;
+        height: 50px;
+        padding: 0 0.5rem;
+        margin-top: 1rem;
+        outline: none;
+        color: rgba(166, 166, 166);
+        font-size: 1rem;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+    }
 
     section.images .circle {
         clip-path: circle(35% at right 80%);
@@ -177,6 +189,18 @@ section.images .circle {
     main {
         width: 100vw;
     }
+    .text {
+        background: #11111f;
+        width: 130%;
+        height: 50px;
+        padding: 0 0.5rem;
+        margin-top: 1rem;
+        outline: none;
+        color: rgba(166, 166, 166);
+        font-size: 1rem;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+    }
 }
 
 @media only screen and (max-width: 450px) {
@@ -190,5 +214,34 @@ section.images .circle {
 
     main form label span, main form input[type="submit"] {
         font-size: 1rem;
+    }
+    .text {
+        background: #11111f;
+        width: 100%;
+        height: 40px;
+        padding: 0 0.5rem;
+        margin-top: 1rem;
+        outline: none;
+        color: rgba(166, 166, 166);
+        font-size: 1rem;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+    }
+
+    main form .cadastar[type="submit"] {
+        cursor: pointer;
+        width: 50%;
+        height: 4rem;
+        margin-top: 3rem;
+        border: none;
+        border-radius: 32px;
+        background: #ff7f32;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        transition: all .3s ease-in-out;
+        align-items: center;
+        justify-items: center;
+        margin-left: 25%;
     }
 }

@@ -1,4 +1,4 @@
-<center><!-- center Starts -->
+<center>
 
     <h1>Meus Pagamentos</h1>
 
@@ -12,15 +12,15 @@
     </p>
 
 
-</center><!-- center Ends -->
+</center>
 
 <hr>
 
-<div class="table-responsive"><!-- table-responsive Starts -->
+<div class="table-responsive">
 
-    <table class="table table-bordered table-hover"><!-- table table-bordered table-hover Starts -->
+    <table class="table table-bordered table-hover">
 
-        <thead><!-- thead Starts -->
+        <thead>
 
             <tr>
 
@@ -36,14 +36,14 @@
 
             </tr>
 
-        </thead><!-- thead Ends -->
+        </thead>
 
-        <tbody><!--- tbody Starts --->
+        <tbody>
 
             <?php
 
             $customer_session = $_SESSION['customer_email'];
-
+ // Obtém informações do cliente com base no endereço de email da sessão.
             $get_customer = "select * from customers where customer_email='$customer_session'";
 
             $run_customer = mysqli_query($con, $get_customer);
@@ -51,13 +51,14 @@
             $row_customer = mysqli_fetch_array($run_customer);
 
             $customer_id = $row_customer['customer_id'];
-
+ // Obtém os pedidos do cliente com base no seu ID.
             $get_orders = "select * from customer_orders where customer_id='$customer_id'";
 
             $run_orders = mysqli_query($con, $get_orders);
 
             $i = 0;
 
+            // Loop para exibir os dados dos pedidos.
             while ($row_orders = mysqli_fetch_array($run_orders)) {
 
                 $order_id = $row_orders['order_id'];
@@ -76,6 +77,7 @@
 
                 $i++;
 
+                // Condição para determinar o status do pedido.
                 if ($order_status == 'pending') {
 
                     $order_status = "<b style='color:red;'>Unpaid</b>";
@@ -85,9 +87,9 @@
                 }
 
             ?>
-
-                <tr><!-- tr Starts -->
-
+/
+                <tr>
+                    <!-- Tabela -->
                     <th><?php echo $i; ?></th>
 
                     <td>$<?php echo $due_amount; ?></td>
@@ -103,17 +105,18 @@
                     <td><?php echo $order_status; ?></td>
 
                     <td>
-                        <a href="confirm.php?order_id=<?php echo $order_id; ?>" target="blank" class="btn btn-success btn-xs"> Confirm If Paid </a>
+                        <a href="confirm.php?order_id=<?php echo $order_id; ?>" target="blank" class="btn btn-success btn-xs">Confirme se pago </a>
+                        <!-- Um botão que permite confirmar se o pagamento foi feito. Ele aponta para "confirm.php" com o ID do pedido na URL. -->
                     </td>
 
 
-                </tr><!-- tr Ends -->
+                </tr>
 
             <?php } ?>
 
-        </tbody><!--- tbody Ends --->
+        </tbody>
 
 
-    </table><!-- table table-bordered table-hover Ends -->
+    </table>
 
-</div><!-- table-responsive Ends -->
+</div>

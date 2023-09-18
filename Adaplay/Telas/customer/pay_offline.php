@@ -1,4 +1,4 @@
-<center><!-- center Starts -->
+<center>
 
     <h1> Método de (Pagar Offline) </h1>
 
@@ -8,16 +8,16 @@
 
     </p>
 
-</center><!-- center Ends -->
+</center>
 
 <hr>
 
 
-<div class="table-responsive"><!-- table-responsive Starts -->
+<div class="table-responsive">
 
-    <table class="table table-bordered table-hover table-striped"><!-- table table-bordered table-hover table-striped Starts -->
+    <table class="table table-bordered table-hover table-striped">
 
-        <thead><!-- thead Starts -->
+        <thead>
 
             <tr>
 
@@ -29,9 +29,9 @@
 
             </tr>
 
-        </thead><!-- thead Ends -->
+        </thead>
 
-        <tbody><!-- tbody Starts -->
+        <tbody>
 
             <tr>
 
@@ -45,9 +45,9 @@
 
             </tr>
 
-        </tbody><!-- tbody Ends -->
+        </tbody>
 
 
-    </table><!-- table table-bordered table-hover table-striped Ends -->
+    </table>
 
-</div><!-- table-responsive Ends -->
+</div>
