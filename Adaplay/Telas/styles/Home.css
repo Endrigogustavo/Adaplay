@@ -273,7 +273,7 @@ body{
      .categorias .card{
          height: 20rem;
          width: 40rem;
-         background-color: #fffdd0;
+         background-color: #fbdecd;
          overflow: hidden;
          border-radius: 0% 0% 1% 1%;
          font-family: Jost;
@@ -285,7 +285,7 @@ body{
          transform: scale(.98) translateY(-1px);
          cursor: pointer;
          transition: 0.3s;
-         filter: drop-shadow(3px 10px 4px #4444dd);
+         filter: drop-shadow(3px 10px 4px #11111f);
      }
      
      
