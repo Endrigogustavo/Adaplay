@@ -9,11 +9,29 @@
     font-family: "Poppins", sans-serif;
 }
 
-
-body {
-  background: #11111f;
-
-}
+body::before{
+  content:'';
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+    height: 100vh;
+  background: linear-gradient(#ff3300, rgba(255, 115, 0, 0.836));
+  clip-path: circle(30% at right 80%);
+  z-index: -1;
+  
+  }
+  body::after{
+      content:'';
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height: 100%;
+      background: linear-gradient(#ee3902,#ff6600);
+      clip-path: circle(20% at 10% 10%);
+      z-index: -1;
+  }
 
 .box2 {
     display: flex;
@@ -31,7 +49,6 @@ body {
     align-items: center;
     width: 450px;
     height: 600px;
-    background:#151320;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     color: #e4e4e4;
@@ -101,6 +118,8 @@ body {
     text-decoration: none;
   }
   /* Inputs login e registro */
+
+ 
   .form-group input {
     width: 350px;
     height: 100%;
@@ -112,6 +131,10 @@ body {
     font-weight: 500;
     padding-right: 28px;
   }
+  .form-group input:focus {
+    background-color: #f0f0f0; 
+    color: #000000; 
+}
   
   .form-group label {
     position: absolute;
@@ -122,16 +145,21 @@ body {
     font-weight: 500;
     pointer-events: none;
     transition: 0.5s ease;
-  }
-  
-  .form-group:hover {
-    color: #d1ac07;
-  }
-  
-  .form-group input:focus ~ label,
-  .form-group input:valid ~ label {
-    top: -5px;
-  }
+    color: #ffffff; 
+    transform-origin: 0 0;
+}
+
+.form-group:hover label {
+    color: #d1ac07; 
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label,
+.form-group:focus-within label,
+.form-group input:placeholder-shown ~ label {
+    top: -20px; 
+   
+}
   
  
   
@@ -212,7 +240,7 @@ body {
     border: none;
     outline: none;
     font-size: 16px;
-    color: #e4e4e4;
+    color: #000000;
     font-weight: 500;
     padding-right: 28px;
     text-decoration: none;

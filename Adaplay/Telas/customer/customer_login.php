@@ -7,7 +7,7 @@
     <div class="caixa-Login">
 
 
-
+<!-- enviando informaçoes para  checkout.php-->
         <form action="checkout.php" method="post"><!--Inicio do forms-->
             <h2>Login</h2>
             <div class="form-group"><!--Inicio do form-group-->
@@ -43,18 +43,18 @@
 
             </div><!-- text-center final -->
 
-    </div>
-    </form><!--form final -->
-
-
-    <center><!-- incio center  -->
-        <div class="registro">
+            <div class="registro">
             <a href="customer_register.php">
                 <h3>Novo ? Registre-se aqui</h3>
             </a>
         </div>
 
-    </center><!-- center final -->
+    </div>
+    </form><!--form final -->
+
+
+
+
 
 
     </div><!-- box final -->
@@ -94,7 +94,7 @@
         if ($check_customer == 0) {
             // Se nenhum cliente corresponder ao email e senha fornecidos
 
-            echo "<script>alert('password or email is wrong')</script>";
+            echo "<script>alert('Senha ou Email incorretos.')</script>";
             // Exibe um alerta informando que a senha ou o email estão incorretos
             exit();
             // Encerra o script
@@ -106,7 +106,7 @@
             $_SESSION['customer_email'] = $customer_email;
             // Define a variável de sessão 'customer_email' com o valor do email do cliente
 
-            echo "<script>alert('You are Logged In')</script>";
+            echo "<script>alert('Conta Acessada.')</script>";
             // Exibe um alerta informando que o cliente está logado
 
             echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";

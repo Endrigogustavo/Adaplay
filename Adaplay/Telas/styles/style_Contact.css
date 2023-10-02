@@ -1,6 +1,5 @@
 /* GLOBAL */
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
     justify-content: center;
@@ -18,10 +17,7 @@ h2 {
 }
 
 
-body {
-    font: var(--body-font);
-    background: #11111f;
-}
+
 
 /* FORM */
 .form_contact {
@@ -78,7 +74,7 @@ td.btn_list {
     padding-top: 1rem;
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: #000000;
 }
 
 .aviso h5 {
@@ -120,5 +116,15 @@ td.btn_list {
 }
 
 .form-row label{
-    color: #ffffff;
+    color: #000000;
+}
+section.images .circle { 
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    top: 20%;
+    left: 0;
+    background: linear-gradient( #dd9980, #ff7f32);
+    clip-path: circle(40% at right 80%);
+    z-index: -1;
 }

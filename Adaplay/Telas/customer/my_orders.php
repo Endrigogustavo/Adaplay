@@ -87,7 +87,7 @@
                 }
 
             ?>
-/
+
                 <tr>
                     <!-- Tabela -->
                     <th><?php echo $i; ?></th>

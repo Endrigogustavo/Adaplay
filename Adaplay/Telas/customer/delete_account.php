@@ -4,9 +4,9 @@
 
     <form action="" method="post">
 
-        <input class="btn btn-danger" type="submit" name="yes" value="Yes, I want to delete">
+        <input class="btn btn-danger" type="submit" name="yes" value="Sim, eu quero deletar">
 
-        <input class="btn btn-primary" type="submit" name="no" value="No, I Don,t want to delete">
+        <input class="btn btn-primary" type="submit" name="no" value="Não, eu não quero deletar">
 
     </form>
 
@@ -26,7 +26,7 @@ if (isset($_POST['yes'])) {
 
         session_destroy();
 
-        echo "<script>alert('Your Account Has Been Deleted! Good By')</script>";
+        echo "<script>alert('Sua conta foi deletada! ')</script>";
 
         echo "<script>window.open('../index.php','_self')</script>";
     }

@@ -30,17 +30,17 @@ include("includes/main.php");
   <section class="carouselbanner swiper mySwiper">
       <div class="wrapperzin swiper-wrapper">
 
-        <div class="slide swiper-slide">
-          <img src="images/1.png" alt="" class="image" />
+        <div class="slidezin swiper-slide">
+          <img src="images/1r.png" alt="" class="image" />
           <div class="image-data">
-                <h2>AdaPlay </h2>    
+                <h2>ADAPLAY</h2>    
                 <span class="text">Fazendo o mundo um lugar mais inclusivo para todos</span>
                 <br>
                 <a href="about.php" class="button">Sobre Nós</a>
           </div>
         </div>
 
-        <div class="slide swiper-slide">
+        <div class="slidezin swiper-slide">
           <img src="images/2.jpg" alt="" class="image" />
           <div class="image-data">
                 <h2>Bandai Namco</h2>    
@@ -50,7 +50,7 @@ include("includes/main.php");
           </div>
         </div>
 
-        <div class="slide swiper-slide">
+        <div class="slidezin swiper-slide">
           <img src="images/3.jpg" alt="" class="image" />
           <div class="image-data">
             <h2>Brinquedos Adaptados </h2>    

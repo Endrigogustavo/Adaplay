@@ -6,44 +6,13 @@
 <body>
 
   <header>
-    <div class="upper-nav">
-      <div class="iconezinho">
-        <a href="#" class="icone"><img src="images/adapt.png"></a>
-      </div>
-
-      <ul class="login">
-
-        <li class="login__item">
-          <?php
-          if (!isset($_SESSION['customer_email'])) {
-            echo '<a href="'.$register.'" class="login__link">Registrar</a>';
-          } else {
-            echo '<a href="'.$conta.'" class="login__link">Minha Conta</a>';
-          }
-          ?>
-        </li>
-
-
-        <li class="login__item">
-          <?php
-          if (!isset($_SESSION['customer_email'])) {
-            echo '<a href="'.$checkout.'" class="login__link">Entrar</a>';
-          } else {
-            echo '<a href="'.$logout.'" class="login__link">Sair</a>';
-          }
-          ?>
-
-        </li>
-      </ul>
-
-
-    </div>
+   
 
     <nav>
 
 
       <div class="logozinha">
-        <a href="<?php echo $index?>" class="logo"><img src="images/logo2.png" alt=""></a>
+        <a href="<?php echo $index?>" class="logo"><img src="images/logo2.png" alt=""><span>ADAPLAY</span></a>
       </div>
 
       <ul class="navmenuzin">
@@ -54,12 +23,21 @@
           <ul>
             <li><?php
                 if (!isset($_SESSION['customer_email'])) {
-                  echo "<p>Seja Bem-Vindo :</p>";
+                  echo "<p>Seja Bem-Vindo: Visitante</p>";
                 } else {
-                  echo "<p>Seja Bem-Vindo : " . $_SESSION['customer_email'] . "</p>";
+                  echo "<p>Seja Bem-Vindo: " . $_SESSION['customer_email'] . "</p>";
                 }
                 ?></li>
-            <li><a href="<?php echo $conta?>">Configurações da Conta</a></li>
+
+            <li> <?php
+                  if (!isset($_SESSION['customer_email'])) {
+                    echo '<a href="'.$checkout.'" >Entrar</a></li>';
+                    echo '<li><a href="'.$register.'" >Registrar</a></li>';
+                    } else {
+                    echo '<li><a href="'.$conta.'">Configurações Conta</a>';
+                    echo '<li><a href="'.$logout.'">Logout</a>';
+                     }
+                  ?></li>    
             <li><a href="<?php echo $favorites?>">Lista de Desejos</a></li>
           </ul>
 

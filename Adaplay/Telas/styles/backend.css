@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 html {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   line-height: 1.15;
@@ -1019,32 +1020,6 @@ img {
   --color-texto: #ff7f32;
 }
 
-/*Upper*/
-.upper-nav {
-  position: relative;
-  width: 100%;
-  top: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 10%;
-  background: #1b1b30;
-}
-
-.iconezinho {
-  max-height: 20;
-  align-items: center;
-  display: flex;
-}
-
-.icone img {
-  display: flex;
-  max-width: 50px;
-  height: auto;
-  filter: brightness(500%);
-}
 
 /*Nav*/
 header {
@@ -1061,19 +1036,41 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 20px 10%;
-  background: var(--color-secundaria);
+  background: #f2f2f2;
 }
 
 .logozinha {
   max-height: 20px;
   display: flex;
   align-items: center;
+  text-decoration: none
 }
 
 .logo img {
   max-width: 130px;
   height: auto;
 }
+
+.logo {
+ 
+  text-decoration: none;
+  color: #ff7f32;
+  font-weight: bold;
+  
+}
+
+
+
+.logozinha a {
+  text-decoration: none;
+  
+}
+
+.logozinha a {
+  color: #ff7f32;
+}
+
+
 
 .navmenuzin {
   display: flex;
@@ -1136,7 +1133,7 @@ nav {
   text-align: left;
   position: absolute;
   padding: 0;
-  background: #1b1b30;
+  background: #f2f2f2;
   display: none;
   border-radius: 0 0 5% 5%;
   list-style: none;
@@ -1174,31 +1171,9 @@ nav {
   text-transform: uppercase;
 }
 
-.login__item {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 35px;
-}
 
-.login__item:last-child {
-  margin-right: 0;
-}
 
-.login__link {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  display: block;
-  font-size: 13px;
-  color: var(--color-texto);
-  line-height: 45px;
-  text-decoration: none;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
 
-.login__link:hover {
-  color: var(--color-principal);
-  text-decoration: none;
-}
 
 /*Pesquisa*/
 
@@ -1227,6 +1202,12 @@ nav {
   text-decoration: none;
 }
 
+
+@media (max-width: 1275px){
+  .logozinha span{
+    visibility: hidden;
+  }
+}
 
 /* Responsive-css */
 @media (max-width: 890px) {
@@ -1265,17 +1246,14 @@ nav {
     position: relative;
   }
 
-  .upper-nav {
-    display: none;
-  }
-
+ 
   .navmenuzin {
     position: absolute;
     top: 100%;
     right: -100%;
     width: 300px;
     height: 130vh;
-    background: var(--color-secundaria);
+    background: #f2f2f2;
     display: none;
     flex-direction: column;
     align-items: first baseline;
@@ -1300,5 +1278,9 @@ nav {
 
   .Carrinho p {
     left: 88%;
+  }
+
+  .logozinha span{
+    visibility: visible;
   }
 }

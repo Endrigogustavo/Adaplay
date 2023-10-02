@@ -1,6 +1,6 @@
 <center>
 
-    <h1> Método de (Pagar Offline) </h1>
+    <h1> Método de Pagamento (Teste) </h1>
 
     <p class="text-muted">
 

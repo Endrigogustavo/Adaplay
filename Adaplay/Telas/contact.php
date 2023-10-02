@@ -1,10 +1,26 @@
+
+<?php
+$index= "index.php";
+$register = "customer_register.php";
+$conta = "customer/my_account.php?my_orders";
+$cart = "#";
+$favorites = "customer/my_account.php?my_wishlist";
+$products = "shop.php";
+$contato = "contact.php";
+$logout = "logout.php";
+$checkout = "checkout.php";
+
+
+include("includes/Contact_Us.php");
+include("functions/functions.php");
+include("includes/main.php");
+?>
+
 <?php
 require_once 'classe_cliente.php';
 $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
+
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +30,6 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,6 +42,7 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
     <div class="container">
         <!--INSERIR MSG DO CLIENTE NO BANCO DE DADOS-->
         <?php
+        
         if (isset($_POST['btn_submit'])) {
             // EDITAR
             if (isset($_GET['id_up']) && !empty($_GET['id_up'])) {
@@ -87,7 +103,7 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="nome">Nome:</label>
-                        <input id="nome" type="text" class="form-control name" placeholder=" Nome completo" name="nome" value="<?php if (isset($res)) {
+                        <input id="nome" type="text" class="form-control name" placeholder="Nome completo" name="nome" value="<?php if (isset($res)) {
                                                                                                                                     echo $res['nome'];
                                                                                                                                 } ?>" />
                     </div>
@@ -187,7 +203,12 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
                 </tbody>
             </table>
         </section>
+        
+    <section class="images">
+  <div class="circle"></div>
+</section>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

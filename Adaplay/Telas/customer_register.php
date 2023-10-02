@@ -118,7 +118,7 @@ include("includes/main.php");
           <span>Foto de Perfil</span>
           <input class="text" type="file" id="password" name="c_image" required>
         </label>
-        <div class="d-flex justify-content-end"> <input type="submit" value="Cadastar" name="register" id="button" class="cadastar"> </div>
+        <div class="d-flex justify-content-end"> <input type="submit" value="Cadastrar" name="register" id="button" class="cadastar"> </div>
 
       </div>
 
@@ -166,7 +166,7 @@ include("includes/main.php");
         $("#meter").animate({
           width: '50px'
         }, 300);
-        meter.style.backgroundColor = "red";
+        meter.style.backgroundColor = "#ff3259";
         document.getElementById("pass_type").innerHTML = "Fraco";
       }
 
@@ -174,7 +174,7 @@ include("includes/main.php");
         $("#meter").animate({
           width: '100px'
         }, 300);
-        meter.style.backgroundColor = "Yellow";
+        meter.style.backgroundColor = "#f8ff32";
         document.getElementById("pass_type").innerHTML = "Medio";
       }
 
@@ -182,7 +182,7 @@ include("includes/main.php");
         $("#meter").animate({
           width: '150px'
         }, 300);
-        meter.style.backgroundColor = "Green";
+        meter.style.backgroundColor = "#32ff54";
         document.getElementById("pass_type").innerHTML = "Bom";
       }
 
@@ -190,7 +190,7 @@ include("includes/main.php");
         $("#meter").animate({
           width: '200px'
         }, 300);
-        meter.style.backgroundColor = "Blue";
+        meter.style.backgroundColor = "#32a6ff";
         document.getElementById("pass_type").innerHTML = "Forte";
       }
     } else {
