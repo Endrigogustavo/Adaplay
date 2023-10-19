@@ -28,112 +28,95 @@ include("includes/main.php");
 
 <link href="styles/Login.css" rel="stylesheet">
 
-<main>
 
-  <div class="d-flex justify-content-end align-items-center">
-    <form action="customer_register.php" method="post" enctype="multipart/form-data" name="cliente">
-      <div class="d-flex">
+<body>
 
+    <div class="containerrr" id="containerrr">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registeration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                <div class="max-width">
+                 <div class="imageContainer">
+                 <img src="images/icone.png" alt="Selecione uma imagem" id="imgPhoto">
+                 </div>
+               </div>
+               <input type="file" id="flImage" name="fImage" accept="image/*">
 
-        <div class="d-flex justify-content-end">
-          <h1 class="H1">Cadastro</h1>
-          <div class="alternative">
-          </div>
+                </div>
+                <span>or use your email password</span>
 
-          <label for="name">
-            <span>Nome</span>
-            <input class="text" type="text" id="name" name="c_name" required>
-          </label>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a href="#">Forget Your Password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hiddenn" id="loginn">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hiddenn" id="registerr">Teste</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-          <label for="email">
-            <span>Email</span>
-            <input class="text" type="email" id="email" name="c_email" required>
-          </label>
-
-          <label for="email">
-
-
-            <span>Senha</span>
-
-
-            <input class="text" type="password" id="pass" name="c_pass" required>
-
-
-          </label>
-
-
-          <div id="meter_wrapper"><!-- Início de wrapper do medidor de senha -->
-
-            <span id="pass_type"> </span>
-
-            <div id="meter"> </div>
-            <div class="input-group">
-            </div><!-- Fim de wrapper do medidor de senha -->
-
-
-          </div><!-- Fim de grupo de entrada -->
-
-        </div><!-- Fim de grupo de formulário -->
-
-
-
-        <div class="form-group">
-
-
-          <div class="input-group"><!-- Início de grupo de entrada -->
-
-
-
-            </span><!-- Complemento do grupo de entrada termina -->
-
-
-          </div><!-- Fim do grupo de entrada -->
-
-        </div><!-- Fim do Formulário -->
-
-
-
-        <label for="password">
-
-          </span>
-
-          <span>Confirmar Senha</span>
-
-          <input class="text" type="password" id="con_pass" required>
-        </label>
-        <label for="password">
-
-          <span>Contato</span>
-          <input class="text" type="text" id="password" name="c_contact" required>
-        </label>
-
-        <label for="password">
-          <span>Endereço</span>
-          <input class="text" type="text" id="password" name="c_address" required>
-        </label>
-
-
-        <label for="password">
-          <span>Foto de Perfil</span>
-          <input class="text" type="file" id="password" name="c_image" required>
-        </label>
-        <div class="d-flex justify-content-end"> <input type="submit" value="Cadastrar" name="register" id="button" class="cadastar"> </div>
-
-      </div>
-
-  </div>
+    <!-- 
+            <script type="text/javascript" src="Script/script.js">
+                                    	                                    
+const Banco = requere('banco')	const Banco = requere('banco')
+const banco = new Banco('testeibm', 'root', '',{	const banco = new Banco('testeibm', 'root', '',{
+  host: "localhost",	 host: "localhost",
+  dialect: "mysql"	 dialect: "mysql"
+})	})
+banco.authenticate().then(function(){	  banco.authenticate().then(function(){
+  console.log("Sucesso")	   console.log("Sucesso")
+}).catch(function(erro){	  }).catch(function(erro){
+  console.log("falha " +erro)	  console.log("falha " +erro)
+})	  })
+    function salvar(){
+            function salvar(){	        var nome = document.getElementById('register_username').value;
+                var nome = document.getElementById('register_username').value;	        var senha = document.getElementById('register_password').value;
+                var senha = document.getElementById('register_password').value;	        banco.transaction(function(armazenar){
+                banco.transaction(function(armazenar){	         armazenar.executeSql("INSERT INTO usuarios (username, password) VALUES (?,?)",[nome,senha]);
+                 armazenar.executeSql("INSERT INTO usuarios (username, password) VALUES (?,?)",[nome,senha]);	         });
+                 });	     }
+             }	    </script>
 
 
-
-  </form>
-  </div>
-</main>
-<section class="images">
-  <div class="circle"></div>
-</section>
-
-
+             https://github.com/Endrigogustavo/IBM--2023/commit/d65bc4d02f4b0ab1506b46f48978a755ac1e8e3e#diff-48ae95d0b66a2bff674d13ecf7158b80303bf77dc9027f9822560a352ff104dd
+    -->
+    <script src="js/Login.js"></script>
+    <script src="js/Script-Cadastro.js"></script>
 
 <script src="js/jquery.min.js"> </script>
 
@@ -199,6 +182,9 @@ include("includes/main.php");
     }
   }
 </script>
+
+<div class="toggle">
+</div>
 </body>
 
 </html>
