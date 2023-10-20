@@ -2,8 +2,8 @@
 
 session_start();
 
-  //Variáveis de Link
-$index= "index.php";
+//Variáveis de Link
+$index = "index.php";
 $register = "#";
 $conta = "customer/my_account.php?my_orders";
 $cart = "cart.php";
@@ -31,160 +31,174 @@ include("includes/main.php");
 
 <body>
 
-    <div class="containerrr" id="containerrr">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Create Account</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registeration</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Sign Up</button>
-            </form>
+  <div class="containerrr" id="containerrr">
+    <div class="form-container sign-up">
+      <form action="checkout.php" method="post">
+        <h1>login</h1>
+        <div class="social-icons">
+          <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
-        <div class="form-container sign-in">
-            <form>
-                <h1>Sign In</h1>
-                <div class="social-icons">
-                <div class="max-width">
-                 <div class="imageContainer">
-                 <img src="images/icone.png" alt="Selecione uma imagem" id="imgPhoto">
-                 </div>
-               </div>
-               <input type="file" id="flImage" name="fImage" accept="image/*">
+        <span>or use your email for registeration</span>
+        <input type="text" placeholder="Email" name="c_email" required>
+        <input type="password" placeholder="Senha" name="c_pass" required>
+        <button name="login" value="Login" class="btn btn-primary">
 
-                </div>
-                <span>or use your email password</span>
+<i class="fa fa-sign-in"></i> Entrar
 
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <button>Sign In</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to use all of site features</p>
-                    <button class="hiddenn" id="loginn">Sign In</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Register with your personal details to use all of site features</p>
-                    <button class="hiddenn" id="registerr">Teste</button>
-                </div>
-            </div>
-        </div>
+
+</button>
+      </form>
     </div>
+    <div class="form-container sign-in">
+      <form action="customer_register.php" method="post" enctype="multipart/form-data" name="cliente">
+        <h1>Cadastrar</h1>
+        <span>Foto de perfil</span>
+        <div class="social-icons">
+          <div class="max-width">
+            <div class="imageContainer">
+              <img src="images/icone.png" alt="Selecione uma imagem" id="imgPhoto">
+            </div>
+          </div>
+          <input type="file" id="flImage" name="c_image" required accept="image/*">
 
-    <!-- 
-            <script type="text/javascript" src="Script/script.js">
-                                    	                                    
-const Banco = requere('banco')	const Banco = requere('banco')
-const banco = new Banco('testeibm', 'root', '',{	const banco = new Banco('testeibm', 'root', '',{
-  host: "localhost",	 host: "localhost",
-  dialect: "mysql"	 dialect: "mysql"
-})	})
-banco.authenticate().then(function(){	  banco.authenticate().then(function(){
-  console.log("Sucesso")	   console.log("Sucesso")
-}).catch(function(erro){	  }).catch(function(erro){
-  console.log("falha " +erro)	  console.log("falha " +erro)
-})	  })
-    function salvar(){
-            function salvar(){	        var nome = document.getElementById('register_username').value;
-                var nome = document.getElementById('register_username').value;	        var senha = document.getElementById('register_password').value;
-                var senha = document.getElementById('register_password').value;	        banco.transaction(function(armazenar){
-                banco.transaction(function(armazenar){	         armazenar.executeSql("INSERT INTO usuarios (username, password) VALUES (?,?)",[nome,senha]);
-                 armazenar.executeSql("INSERT INTO usuarios (username, password) VALUES (?,?)",[nome,senha]);	         });
-                 });	     }
-             }	    </script>
+        </div>
+        <span>Informações da conta</span>
+
+      <input type="text" placeholder="Nome" id="name" name="c_name" required>
+
+      <input type="email" placeholder="Email" type="email" id="email" name="c_email" required>
+
+      <input type="password" placeholder="Senha"  onkeyup="trigger()" id="pass" name="c_pass" required class="Senha">
+      <div class="indicator">
+        <span class="fraco"></span>
+        <span class="medio"></span>
+        <span class="forte"></span>
+      </div>
+      <div class="text">Fraca</div>
+
+      <input type="password" placeholder="Corfirmar Senha" id="con_pass" required>
+
+      <input type="tel" placeholder="Contato" name="c_contact" required
+      >
+      <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
+      <input type="text" placeholder="Endereço" name="c_address" required>
+      <a href="#">Forget Your Password?</a>
+      <input type="submit" value="Cadastrar" name="register" id="button" class="cadastar">
+      </form>
+  </div>
+  <div class="toggle-container">
+    <div class="toggle">
+      <div class="toggle-panel toggle-left">
+        <h1>Welcome Back!</h1>
+        <p>Enter your personal details to use all of site features</p>
+        <button class="hiddenn" id="loginn">Sign In</button>
+      </div>
+      <div class="toggle-panel toggle-right">
+        <h1>Hello, Friend!</h1>
+        <p>Register with your personal details to use all of site features</p>
+        <button class="hiddenn" id="registerr">Teste</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+        
+
+  <script src="js/Login.js"></script>
+  <script src="js/Script-Cadastro.js"></script>
+
+  <script src="js/jquery.min.js"> </script>
+
+  <script src="js/bootstrap.min.js"></script>
 
 
-             https://github.com/Endrigogustavo/IBM--2023/commit/d65bc4d02f4b0ab1506b46f48978a755ac1e8e3e#diff-48ae95d0b66a2bff674d13ecf7158b80303bf77dc9027f9822560a352ff104dd
-    -->
-    <script src="js/Login.js"></script>
-    <script src="js/Script-Cadastro.js"></script>
 
-<script src="js/jquery.min.js"> </script>
+  <!-- Tratamento da Força da senha -->
+  <script>
+    const indicator = document.querySelector('.indicator');
+    const input = document.querySelector('.Senha');
+    const fraco = document.querySelector('.fraco');
+    const medio = document.querySelector('.medio');
+    const forte = document.querySelector('.forte');
+    const text = document.querySelector('.text');
+    const showBtn = document.querySelector('.showBtn');
 
-<script src="js/bootstrap.min.js"></script>
+    let regExpFraco = /[a-z]/;
+    let regExpMedio = /\d+/;
+    let regExpForte = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
 
+    function trigger() {
+      if (input.value != "") {
+        indicator.style.display = "flex";
 
+        if (input.value.length <= 3
+          && (input.value.match(regExpFraco)
+            || input.value.match(regExpMedio)
+            || input.value.match(regExpForte))) no = 1;
 
-<!-- Tratamento da Força da senha -->
-<script>
-  $(document).ready(function() {
-    $("#pass").keyup(function() {
-      check_pass();
-    });
-  });
+        if (input.value.length >= 6
+          && ((input.value.match(regExpFraco)
+            && input.value.match(regExpMedio))
+            || (input.value.match(regExpMedio)
+              && input.value.match(regExpForte))
+            || (input.value.match(regExpFraco)
+              && input.value.match(regExpForte)))) no = 2;
 
-  function check_pass() {
-    var val = document.getElementById("pass").value;
-    var meter = document.getElementById("meter");
-    var no = 0;
-    if (val != "") {
-      // 6 caracteres
-      if (val.length <= 6) no = 1;
-      // Caracter especial + 6 letras
-      if (val.length > 6 && (val.match(/[a-z]/) || val.match(/\d+/) || val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))) no = 2;
-      // Caracter especial + 6 letras + Numeros
-      if (val.length > 6 && ((val.match(/[a-z]/) && val.match(/\d+/)) || (val.match(/\d+/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)) || (val.match(/[a-z]/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)))) no = 3;
-      // Caracter especial + 6 letras + Numeros com uma certa quantidade de numeros
-      if (val.length > 6 && val.match(/[a-z]/) && val.match(/\d+/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)) no = 4;
-      if (no == 1) {
-        $("#meter").animate({
-          width: '50px'
-        }, 300);
-        meter.style.backgroundColor = "#ff3259";
-        document.getElementById("pass_type").innerHTML = "Fraco";
+        if (input.value.length >= 6
+          && input.value.match(regExpFraco)
+          && input.value.match(regExpMedio)
+          && input.value.match(regExpForte)) no = 3;
+
+        if (no == 1){
+          fraco.classList.add('active');
+          text.style.display ="block";
+          text.textContent="A sua senha é fraca";
+          text.classList.add('fraco');
+        }
+
+        if (no == 2){
+          medio.classList.add('active');
+          text.style.display ="block";
+          text.textContent="A sua senha é mediana";
+          text.classList.add('medio');
+        }else{
+          medio.classList.remove('active');
+          text.classList.remove('medio');
+        }
+
+        if (no == 3){
+          forte.classList.add('active');
+          text.style.display ="block";
+          text.textContent="A sua senha é forte";
+          text.classList.add('forte');
+        }else{
+          forte.classList.remove('active');
+          text.classList.remove('forte');
+        }
+
+        showBtn.style.display='block';
+        showBtn.onclick=function(){
+
+          if(input.type == 'password'){
+            showBtn.textContent="HIDE";
+            input.type = 'text';
+          }else{
+            showBtn.textContent="SHOW";
+            input.type = 'password';
+          }
+        }
+
+      } else {
+        indicator.style.display = "none";
+        text.style.display = "none";
+        showBtn.style.display = "none"
       }
-
-      if (no == 2) {
-        $("#meter").animate({
-          width: '100px'
-        }, 300);
-        meter.style.backgroundColor = "#f8ff32";
-        document.getElementById("pass_type").innerHTML = "Medio";
-      }
-
-      if (no == 3) {
-        $("#meter").animate({
-          width: '150px'
-        }, 300);
-        meter.style.backgroundColor = "#32ff54";
-        document.getElementById("pass_type").innerHTML = "Bom";
-      }
-
-      if (no == 4) {
-        $("#meter").animate({
-          width: '200px'
-        }, 300);
-        meter.style.backgroundColor = "#32a6ff";
-        document.getElementById("pass_type").innerHTML = "Forte";
-      }
-    } else {
-      meter.style.backgroundColor = "";
-      document.getElementById("pass_type").innerHTML = "";
     }
-  }
-</script>
+  </script>
 
-<div class="toggle">
-</div>
 </body>
 
 </html>
@@ -241,5 +255,73 @@ if (isset($_POST['register'])) {
     echo "<script>alert('Erro ao cadastrar, tente novamente')</script>";
   }
 }
+
+
+
+
+if (isset($_POST['login'])) {
+    // Verifica se o formulário de login foi submetido
+
+    $customer_email = $_POST['c_email'];
+    // Obtém o valor do campo de email do formulário
+
+    $customer_pass = $_POST['c_pass'];
+    // Obtém o valor do campo de senha do formulário
+
+    $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass'";
+    // Cria uma consulta SQL para verificar se o email e a senha correspondem a um registro na tabela de clientes
+
+    $run_customer = mysqli_query($con, $select_customer);
+    // Executa a consulta SQL usando a conexão com o banco de dados ($con)
+
+    $get_ip = getRealUserIp();
+    // Obtém o endereço IP real do usuário
+
+    $check_customer = mysqli_num_rows($run_customer);
+    // Verifica quantas linhas correspondem à consulta SQL, ou seja, se o login foi bem-sucedido
+
+    $select_cart = "select * from cart where ip_add='$get_ip'";
+    // Cria uma consulta SQL para buscar informações do carrinho com base no endereço IP do usuário
+
+    $run_cart = mysqli_query($con, $select_cart);
+    // Executa a consulta no banco de dados para o carrinho
+
+    $check_cart = mysqli_num_rows($run_cart);
+    // Verifica quantas linhas foram retornadas pela consulta do carrinho
+
+    if ($check_customer == 0) {
+        // Se nenhum cliente corresponder ao email e senha fornecidos
+
+        echo "<script>alert('Senha ou Email incorretos.')</script>";
+        // Exibe um alerta informando que a senha ou o email estão incorretos
+        exit();
+        // Encerra o script
+    }
+
+    if ($check_customer == 1 and $check_cart == 0) {
+        // Se um cliente corresponder e não houver itens no carrinho
+
+        $_SESSION['customer_email'] = $customer_email;
+        // Define a variável de sessão 'customer_email' com o valor do email do cliente
+
+        echo "<script>alert('Conta Acessada.')</script>";
+        // Exibe um alerta informando que o cliente está logado
+
+        echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
+        // Redireciona o cliente para a página 'my_account.php' com a consulta de 'my_orders' como parâmetro
+    } else {
+        // Se um cliente corresponder e houver itens no carrinho
+
+        $_SESSION['customer_email'] = $customer_email;
+        // Define a variável de sessão 'customer_email' com o valor do email do cliente
+
+        echo "<script>alert('You are Logged In')</script>";
+        // Exibe um alerta informando que o cliente está logado
+
+        echo "<script>window.open('checkout.php','_self')</script>";
+        // Redireciona o cliente para a página 'checkout.php'
+    }
+}
+
 
 ?>
