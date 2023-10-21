@@ -1,6 +1,6 @@
 <center>
 
-    <h1> Minha Lista de Desenjos </h1>
+    <h1> Minha Lista de Desejos </h1>
 
     <p class="lead"> Todos os seus produtos da lista de desejos em um só lugar. </p>
 

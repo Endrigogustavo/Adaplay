@@ -80,7 +80,7 @@ function getPro()
 // Função para obter e exibir produtos na página.
   global $db;
 
-  $get_products = "select * from products order by 1 DESC LIMIT 0,8";
+  $get_products = "select * from products order by 1 DESC LIMIT 0,6";
 
   $run_products = mysqli_query($db, $get_products);
 
@@ -461,7 +461,7 @@ function getPaginator()
     echo "&" . $aPath;
   }
 
-  echo "' >" . 'First Page' . "</a></li>";
+  echo "' >" . 'Primeira Página' . "</a></li>";
 
   for ($i = 1; $i <= $total_pages; $i++) {
 
@@ -474,7 +474,7 @@ function getPaginator()
     echo "&" . $aPath;
   }
 
-  echo "' >" . 'Last Page' . "</a></li>";
+  echo "' >" . 'Ùltima Página' . "</a></li>";
 
   /// getPaginator Function Code Ends ///
 

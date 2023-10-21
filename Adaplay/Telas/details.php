@@ -103,7 +103,7 @@ if ($check_product == 0) {
     <!-- HERO -->
     <div class="nero">
       <div class="nero__heading">
-        <span class="nero__bold">Ver </span>Produto
+        <span class="nero__bold">Ver | </span>Produto
       </div>
       <p class="nero__text">
       </p>

@@ -51,7 +51,7 @@ input[type='file'] {
 }
 
 .containerrr p{
-    font-size: 14px;
+    font-size: 3vh;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
@@ -69,6 +69,20 @@ input[type='file'] {
 }
 
 .containerrr .cadastar{
+    background-color: #ff7f32;
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.containerrr button{
     background-color: #ff7f32;
     color: #f2f2f2;
     font-size: 12px;
@@ -214,6 +228,29 @@ input[type='file'] {
     transition: all 0.6s ease-in-out;
 }
 
+.Img-fun1{
+    height: 45%;
+    opacity: 0.4;
+    filter: alpha(opacity=40)
+}
+
+.Img-fun1:hover{
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    transition: 300ms linear; 
+}
+
+.Img-fun2{
+    height: 45%;
+    opacity: 0.4;
+    filter: alpha(opacity=40)
+}
+
+.Img-fun2:hover{
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    transition: 300ms linear; 
+}
 .toggle-left{
     transform: translateX(-200%);
 }

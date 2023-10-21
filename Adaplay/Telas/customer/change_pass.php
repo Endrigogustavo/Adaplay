@@ -79,7 +79,7 @@ if (isset($_POST['Enviar'])) {
  // Se a atualização for bem-sucedida, exibe um alerta e redireciona para a página 'my_account.php?my_orders'.
     if ($run_pass) {
 
-        echo "<script>alert('your Password Has been Changed Successfully')</script>";
+        echo "<script>alert('Sua senha foi alterada com sucesso!')</script>";
 
         echo "<script>window.open('my_account.php?my_orders','_self')</script>";
     }

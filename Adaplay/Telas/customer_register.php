@@ -36,12 +36,9 @@ include("includes/main.php");
       <form action="checkout.php" method="post">
         <h1>login</h1>
         <div class="social-icons">
-          <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
-        <span>or use your email for registeration</span>
+        <span>Coloque as infromações da sua conta</span>
         <input type="text" placeholder="Email" name="c_email" required>
         <input type="password" placeholder="Senha" name="c_pass" required>
         <button name="login" value="Login" class="btn btn-primary">
@@ -59,7 +56,7 @@ include("includes/main.php");
         <div class="social-icons">
           <div class="max-width">
             <div class="imageContainer">
-              <img src="images/icone.png" alt="Selecione uma imagem" id="imgPhoto">
+              <img src="images/Cadastro/icone.png" alt="Selecione uma imagem" id="imgPhoto">
             </div>
           </div>
           <input type="file" id="flImage" name="c_image" required accept="image/*">
@@ -85,21 +82,23 @@ include("includes/main.php");
       >
       <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
       <input type="text" placeholder="Endereço" name="c_address" required>
-      <a href="#">Forget Your Password?</a>
       <input type="submit" value="Cadastrar" name="register" id="button" class="cadastar">
       </form>
   </div>
   <div class="toggle-container">
     <div class="toggle">
       <div class="toggle-panel toggle-left">
-        <h1>Welcome Back!</h1>
-        <p>Enter your personal details to use all of site features</p>
-        <button class="hiddenn" id="loginn">Sign In</button>
+        <h1>Adaplay</h1>
+        <img  src="images/Cadastro/Login.png" alt="" class="Img-fun1">
+        <p>Bem vindo de volta!!!</p>
+        <button class="hiddenn" id="loginn">Cadastrar</button>
+        
       </div>
       <div class="toggle-panel toggle-right">
-        <h1>Hello, Friend!</h1>
-        <p>Register with your personal details to use all of site features</p>
-        <button class="hiddenn" id="registerr">Teste</button>
+        <h1>Adaplay</h1>
+        <img src="images/Cadastro/Cadastro.png" alt="" class="Img-fun2">
+        <p>Se já tem uma conta? click em login</p>
+        <button class="hiddenn" id="registerr">Login</button>
       </div>
     </div>
   </div>

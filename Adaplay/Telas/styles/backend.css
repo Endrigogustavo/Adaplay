@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 html {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   line-height: 1.15;
@@ -631,7 +631,13 @@ img {
 
 .page-footer .footer-nav {
   padding: 60px 0 55px;
-  background-color: #11111f;
+}
+
+.line-footer {
+  background-color: #ff7f32;
+  height: 2px;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .page-footer .footer-nav__col {
@@ -788,8 +794,6 @@ img {
 .page-footer__subline {
   padding: 15px;
   font-size: 13px;
-  color: #777;
-  background-color: #0c0c16;
 }
 
 .page-footer__subline .copyright {
@@ -1020,7 +1024,6 @@ img {
   --color-texto: #ff7f32;
 }
 
-
 /*Nav*/
 header {
   font-family: Jost;
@@ -1043,7 +1046,7 @@ nav {
   max-height: 20px;
   display: flex;
   align-items: center;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .logo img {
@@ -1052,25 +1055,18 @@ nav {
 }
 
 .logo {
- 
   text-decoration: none;
   color: #ff7f32;
   font-weight: bold;
-  
 }
-
-
 
 .logozinha a {
   text-decoration: none;
-  
 }
 
 .logozinha a {
   color: #ff7f32;
 }
-
-
 
 .navmenuzin {
   display: flex;
@@ -1171,23 +1167,19 @@ nav {
   text-transform: uppercase;
 }
 
-
-
-
-
 /*Pesquisa*/
 
 .Carrinho {
   display: flex;
 }
 
-.Carrinho i{
+.Carrinho i {
   margin-right: 0;
 }
 
 .Carrinho p {
   text-decoration: none;
-  color: #1b1b30;
+  color: #f2f2f2;
   background: var(--color-texto);
   width: 20px;
   align-items: center;
@@ -1202,9 +1194,8 @@ nav {
   text-decoration: none;
 }
 
-
-@media (max-width: 1275px){
-  .logozinha span{
+@media (max-width: 1275px) {
+  .logozinha span {
     visibility: hidden;
   }
 }
@@ -1227,9 +1218,10 @@ nav {
     transition: 0.3s;
   }
 
-  #dropdownzinho{ /*Minha Conta*/
+  #dropdownzinho {
+    /*Minha Conta*/
     display: block;
-}
+  }
 
   #dropdownzinho ul {
     position: relative;
@@ -1246,7 +1238,6 @@ nav {
     position: relative;
   }
 
- 
   .navmenuzin {
     position: absolute;
     top: 100%;
@@ -1280,7 +1271,7 @@ nav {
     left: 88%;
   }
 
-  .logozinha span{
+  .logozinha span {
     visibility: visible;
   }
 }

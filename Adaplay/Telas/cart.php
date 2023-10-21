@@ -111,7 +111,7 @@ include("includes/main.php");
                         <input type="text" name="quantity" value="<?php echo $_SESSION['quantidadeProduto']; ?>" data-product_id="<?php echo $idProduto; ?>" class="quantity form-control">
                       </td>
                       <td>
-                        R$<?php echo $precoUnico; ?>.00
+                        R$<?php echo $precoUnico; ?>,00
                       </td>
                       <td>
                         <?php echo $proSize; ?>
@@ -121,7 +121,7 @@ include("includes/main.php");
                         <input type="checkbox" name="remove[]" value="<?php echo $idProduto; ?>">
                       </td>
                       <td>
-                        R$<?php echo $subtotal; ?>.00
+                        R$<?php echo $subtotal; ?>,00
                       </td>
                     </tr><!-- tr Termina -->
                 <?php
@@ -133,7 +133,7 @@ include("includes/main.php");
               <tfoot><!-- rodapé Começa -->
                 <tr>
                   <th colspan="5"> Total </th>
-                  <th colspan="2"> R$<?php echo $total; ?>.00 </th>
+                  <th colspan="2"> R$<?php echo $total; ?>,00 </th>
                 </tr>
               </tfoot><!-- rodapé Termina -->
             </table><!-- tabela Termina -->
@@ -352,19 +352,19 @@ $productLabel
             <tbody><!-- corpo Começa -->
               <tr>
                 <td> Subtotal do Pedido </td>
-                <th> R$<?php echo $total; ?>.00 </th>
+                <th> R$<?php echo $total; ?>,00 </th>
               </tr>
               <tr>
                 <td> Envio e manipulação </td>
-                <th>R$0.00</th>
+                <th>R$0,00</th>
               </tr>
               <tr>
                 <td>Taxa</td>
-                <th>R$0.00</th>
+                <th>R$0,00</th>
               </tr>
               <tr class="total">
                 <td>Total</td>
-                <th>R$<?php echo $total; ?>.00</th>
+                <th>R$<?php echo $total; ?>,00</th>
               </tr>
             </tbody><!-- corpo Termina -->
           </table><!-- tabela Termina -->
@@ -374,10 +374,6 @@ $productLabel
   </div><!-- container Termina -->
 </div><!-- conteúdo Termina -->
 
-<?php
-// Inclui o rodapé da página
-include("includes/footer.php");
-?>
 <!-- Scripts JavaScript -->
 <script src="js/jquery.min.js"> </script>
 <script src="js/bootstrap.min.js"></script>

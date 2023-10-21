@@ -20,23 +20,7 @@
 
     <table class="table table-bordered table-hover">
 
-        <thead>
 
-            <tr>
-
-                <th>#</th>
-                <th>Amount</th>
-                <th>Invoice</th>
-                <th>Qty</th>
-                <th>Size</th>
-                <th>Order Date</th>
-                <th>Status</th>
-                <th>Action</th>
-
-
-            </tr>
-
-        </thead>
 
         <tbody>
 

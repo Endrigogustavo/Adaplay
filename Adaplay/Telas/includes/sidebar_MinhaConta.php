@@ -29,7 +29,7 @@
 
 <br>
 
-<h3 align='center' class='panel-title'> Name : $customer_name </h3>
+<h3 align='center' class='panel-title'> Nome : $customer_name </h3>
 
 ";
         }
@@ -41,22 +41,6 @@
     <div class="panel-body"><!-- panel-body Starts -->
 
         <ul class="nav nav-pills nav-stacked"><!-- nav nav-pills nav-stacked Starts -->
-
-            <li class="<?php if (isset($_GET['my_orders'])) {
-                            echo "active";
-                        } ?>">
-
-                <a href="my_account.php?my_orders"> <i class="fa fa-list"> </i> Meus Pagamentos </a>
-
-            </li>
-
-            <li class="<?php if (isset($_GET['pay_offline'])) {
-                            echo "active";
-                        } ?>">
-
-                <a href="my_account.php?pay_offline"> <i class="fa fa-bolt"></i> Método (Pagar Offline) </a>
-
-            </li>
 
             <li class="<?php if (isset($_GET['edit_account'])) {
                             echo "active";

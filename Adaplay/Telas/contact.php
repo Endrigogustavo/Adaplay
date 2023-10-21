@@ -14,6 +14,8 @@ $checkout = "checkout.php";
 include("includes/Contact_Us.php");
 include("functions/functions.php");
 include("includes/main.php");
+
+
 ?>
 
 <?php

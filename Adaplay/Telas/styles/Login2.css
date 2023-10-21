@@ -138,7 +138,7 @@ body::before{
   
   .form-group label {
     position: absolute;
-    top: 50%;
+    top: -20%;
     left: 0;
     transform: translateY(-50%);
     font-size: 16px;
