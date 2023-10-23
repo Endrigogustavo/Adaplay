@@ -25,11 +25,136 @@ include("includes/main.php");
 ?>
 
 <!--alt shift F -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+<script>
+        // This sample uses the Place Autocomplete widget to allow the user to search
+// for and select a place. The sample then displays an info window containing
+// the place ID and other information about the place that the user has
+// selected.
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -23.5475000, lng: -46.6361100 },
+    zoom: 13,
+  });
+  const input = document.getElementById("pac-input");
+  // Specify just the place data fields that you need.
+  const autocomplete = new google.maps.places.Autocomplete(input, {
+    fields: ["place_id", "geometry", "formatted_address", "name"],
+  });
+
+  autocomplete.bindTo("bounds", map);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+  const infowindow = new google.maps.InfoWindow();
+  const infowindowContent = document.getElementById("infowindow-content");
+
+  infowindow.setContent(infowindowContent);
+
+  const marker = new google.maps.Marker({ map: map });
+
+  marker.addListener("click", () => {
+    infowindow.open(map, marker);
+  });
+  autocomplete.addListener("place_changed", () => {
+    infowindow.close();
+
+    const place = autocomplete.getPlace();
+
+    if (!place.geometry || !place.geometry.location) {
+      return;
+    }
+
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);
+    }
+
+    // Set the position of the marker using the place ID and location.
+    // @ts-ignore This should be in @typings/googlemaps.
+    marker.setPlace({
+      placeId: place.place_id,
+      location: place.geometry.location,
+    });
+    marker.setVisible(true);
+    infowindowContent.children.namedItem("place-name").textContent = place.name;
+    infowindowContent.children.namedItem("place-id").textContent =
+      place.place_id;
+    infowindowContent.children.namedItem("place-address").textContent =
+      place.formatted_address;
+    infowindow.open(map, marker);
+  });
+}
+
+window.initMap = initMap;
+    </script>
 
 <link href="styles/Login.css" rel="stylesheet">
 
-
 <body>
+
+<style>
+        /* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+#map {
+  height: 100%;
+  width: 80%;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.controls {
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 17px;
+  margin-top: 10px;
+  outline: none;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+ 
+}
+
+.controls:focus {
+  border-color: #4d90fe;
+}
+
+.title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+    </style>
 
   <div class="containerrr" id="containerrr">
     <div class="form-container sign-up">
@@ -81,7 +206,25 @@ include("includes/main.php");
       <input type="tel" placeholder="Contato" name="c_contact" required
       >
       <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
-      <input type="text" placeholder="Endereço" name="c_address" required>
+
+
+      <div style="display: none">
+      <input
+        id="pac-input"
+        class="controls"
+        type="text"
+        placeholder="Endereço"
+        name="c_address" required
+      />
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br />
+      <strong>Place ID:</strong> <span id="place-id"></span><br />
+      <span id="place-address"></span>
+    </div>
+
+
       <input type="submit" value="Cadastrar" name="register" id="button" class="cadastar">
       </form>
   </div>
@@ -104,8 +247,11 @@ include("includes/main.php");
   </div>
   </div>
 
-        
 
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=  AIzaSyCmpGaxCfmFd1mzS1gFjkD4Ejs6h5OpI1I&callback=initMap&libraries=places&v=weekly"
+      defer
+    ></script>
   <script src="js/Login.js"></script>
   <script src="js/Script-Cadastro.js"></script>
 

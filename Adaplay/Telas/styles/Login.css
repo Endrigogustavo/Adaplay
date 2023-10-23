@@ -101,6 +101,10 @@ input[type='file'] {
     border-color: #EBEBEB;
 }
 
+.containerrr button.hiddenn2{
+    border-color: #EBEBEB;
+}
+
 .containerrr form{
     background-color: #EBEBEB;
     display: flex;
