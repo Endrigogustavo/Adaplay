@@ -139,6 +139,12 @@ body {
  
 }
 
+.gmnoprint{
+  display: none;
+}
+
+
+
 .controls:focus {
   border-color: #4d90fe;
 }
@@ -153,6 +159,16 @@ body {
 
 #map #infowindow-content {
   display: inline;
+}
+
+@media (max-width: 800px) {
+  #map {
+  height: 20%;
+  width: 80%;
+  border-radius: 20px;
+  margin: 10px;
+}
+
 }
     </style>
 
@@ -172,6 +188,7 @@ body {
 
 
 </button>
+
       </form>
     </div>
     <div class="form-container sign-in">
@@ -240,7 +257,7 @@ body {
       <div class="toggle-panel toggle-right">
         <h1>Adaplay</h1>
         <img src="images/Cadastro/Cadastro.png" alt="" class="Img-fun2">
-        <p>Se já tem uma conta? click em login</p>
+        <p>já tem uma conta? click em login</p>
         <button class="hiddenn" id="registerr">Login</button>
       </div>
     </div>

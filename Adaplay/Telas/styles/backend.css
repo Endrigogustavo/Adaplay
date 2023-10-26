@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 html {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   line-height: 1.15;
@@ -395,6 +396,7 @@ img {
     transform: scaleY(0);
     opacity: 0;
   }
+
   to {
     -webkit-transform: scaleY(1);
     transform: scaleY(1);
@@ -408,6 +410,7 @@ img {
     transform: scaleY(0);
     opacity: 0;
   }
+
   to {
     -webkit-transform: scaleY(1);
     transform: scaleY(1);
@@ -512,7 +515,7 @@ img {
   margin-right: 0;
 }
 
-.page-header__bottomline .main-nav .categories__item:hover > .dropdown {
+.page-header__bottomline .main-nav .categories__item:hover>.dropdown {
   display: block;
   -webkit-transform-origin: top;
   transform-origin: top;
@@ -923,7 +926,7 @@ img {
   text-align: center;
   text-transform: uppercase;
   color: #fff;
-  background: #666 url("../images/banner-ave.jpg") no-repeat;
+  background: #666 url("../images/BACKGROUNDBanner.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -982,11 +985,11 @@ img {
   border-top: 1px solid #eee;
 }
 
-.wrapper > :first-child {
+.wrapper> :first-child {
   margin-top: 0;
 }
 
-.wrapper > :last-child {
+.wrapper> :last-child {
   margin-bottom: 0;
 }
 
@@ -1101,6 +1104,7 @@ nav {
   display: flex;
   align-items: center;
 }
+
 .nav-icon i {
   margin-right: 20px;
   color: var(--color-texto);
@@ -1239,6 +1243,7 @@ nav {
   }
 
   .navmenuzin {
+    justify-content: normal;
     position: absolute;
     top: 100%;
     right: -100%;
@@ -1274,4 +1279,11 @@ nav {
   .logozinha span {
     visibility: visible;
   }
+}
+
+@media (max-width: 385px) {
+  .logozinha span {
+    visibility: hidden;
+  }
+
 }

@@ -3,10 +3,10 @@
 $index= "index.php";
 $register = "customer_register.php";
 $conta = "customer/my_account.php?my_orders";
-$cart = "#";
+$cart = "cart.php";
 $favorites = "customer/my_account.php?my_wishlist";
 $products = "shop.php";
-$contato = "contact.php";
+$contato = "#.php";
 $logout = "logout.php";
 $checkout = "checkout.php";
 

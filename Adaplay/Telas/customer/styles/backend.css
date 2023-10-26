@@ -383,7 +383,7 @@ body {
   background-color: white;
 }
 
-.container{
+.container {
   margin: auto;
 }
 
@@ -398,6 +398,7 @@ img {
     transform: scaleY(0);
     opacity: 0;
   }
+
   to {
     -webkit-transform: scaleY(1);
     transform: scaleY(1);
@@ -411,6 +412,7 @@ img {
     transform: scaleY(0);
     opacity: 0;
   }
+
   to {
     -webkit-transform: scaleY(1);
     transform: scaleY(1);
@@ -515,7 +517,7 @@ img {
   margin-right: 0;
 }
 
-.page-header__bottomline .main-nav .categories__item:hover > .dropdown {
+.page-header__bottomline .main-nav .categories__item:hover>.dropdown {
   display: block;
   -webkit-transform-origin: top;
   transform-origin: top;
@@ -922,7 +924,7 @@ img {
   text-align: center;
   text-transform: uppercase;
   color: #fff;
-  background: #666 url("../images/banner-ave.jpg") no-repeat;
+  background: #666 url("../images/BACKGROUNDBanner.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -981,11 +983,11 @@ img {
   border-top: 1px solid #eee;
 }
 
-.wrapper > :first-child {
+.wrapper> :first-child {
   margin-top: 0;
 }
 
-.wrapper > :last-child {
+.wrapper> :last-child {
   margin-bottom: 0;
 }
 
@@ -1054,18 +1056,18 @@ nav {
 }
 
 .logo {
- 
+
   text-decoration: none;
   color: #ff7f32;
   font-weight: bold;
-  
+
 }
 
 
 
 .logozinha a {
   text-decoration: none;
-  
+
 }
 
 .logozinha a {
@@ -1107,6 +1109,7 @@ nav {
   display: flex;
   align-items: center;
 }
+
 .nav-icon i {
   margin-right: 20px;
   color: var(--color-texto);
@@ -1183,7 +1186,7 @@ nav {
   display: flex;
 }
 
-.Carrinho i{
+.Carrinho i {
   margin-right: 0;
 }
 
@@ -1205,8 +1208,8 @@ nav {
 }
 
 
-@media (max-width: 1275px){
-  .logozinha span{
+@media (max-width: 1275px) {
+  .logozinha span {
     visibility: hidden;
   }
 }
@@ -1229,9 +1232,10 @@ nav {
     transition: 0.3s;
   }
 
-  #dropdownzinho{ /*Minha Conta*/
+  #dropdownzinho {
+    /*Minha Conta*/
     display: block;
-}
+  }
 
   #dropdownzinho ul {
     position: relative;
@@ -1248,8 +1252,9 @@ nav {
     position: relative;
   }
 
- 
+
   .navmenuzin {
+    justify-content: normal;
     position: absolute;
     top: 100%;
     right: -100%;
@@ -1282,7 +1287,14 @@ nav {
     left: 88%;
   }
 
-  .logozinha span{
+  .logozinha span {
     visibility: visible;
   }
+}
+
+@media (max-width: 385px) {
+  .logozinha span {
+    visibility: hidden;
+  }
+
 }

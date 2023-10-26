@@ -16,6 +16,8 @@
   <link href="styles/style.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/Home.css">
 
+  <link rel="stylesheet" href="styles/myaccount.css">
+
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 </head>

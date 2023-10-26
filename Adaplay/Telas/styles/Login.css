@@ -245,7 +245,7 @@ input[type='file'] {
 }
 
 .Img-fun2{
-    height: 55%;
+    height: 45%;
     opacity: 0.4;
     filter: alpha(opacity=40)
 }
@@ -346,4 +346,29 @@ form .indicator{
   
   form .text.forte{
     color:#23ad5c;
+  }
+
+
+  @media (max-width: 800px) {
+    .toggle-container{
+        display: none;
+    }
+    .form-container .sign-up{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        width: 2000px;
+    }
+    form{
+        justify-content: center;
+        align-items: center;
+        left: 1000px;
+    }
+    .containerrr{
+align-items: center;
+width: 200%;
+height: 1000px;
+    }
+
+    
   }
