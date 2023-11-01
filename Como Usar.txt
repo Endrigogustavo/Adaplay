@@ -2,6 +2,7 @@ As branchs funcionam de forma colaborativa, onde o codigo principal nao muda
 e a cada um faz sua parte individual e junta tudo no fim
 
 Video de ajuda: https://www.youtube.com/live/xAOBQtSVI_k?si=VS6Mz6O7CG4h9IGd
+//
 
 Codigo Git Bash:
 
