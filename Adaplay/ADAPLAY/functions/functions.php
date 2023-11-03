@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost", "root", "", "ecom_store");
+$db = mysqli_connect("localhost", "root", "", "db_adaplay");
 
 /// O código do endereço IP começa /////
 function getRealUserIp()
@@ -27,7 +27,7 @@ function items()
 
   $ip_add = getRealUserIp();
 
-  $get_items = "select * from cart where ip_add='$ip_add'";
+  $get_items = "select * from carrinho where ip_add='$ip_add'";
 
   $run_items = mysqli_query($db, $get_items);
 
@@ -43,7 +43,7 @@ function items()
 
 function total_price()
 {
-// Função para calcular o preço total dos itens no carrinho de compras do usuário.
+  // Função para calcular o preço total dos itens no carrinho de compras do usuário.
   global $db;
 
   $ip_add = getRealUserIp();
@@ -77,41 +77,41 @@ function total_price()
 
 function getPro()
 {
-// Função para obter e exibir produtos na página.
+  // Função para obter e exibir produtos na página.
   global $db;
 
-  $get_products = "select * from products order by 1 DESC LIMIT 0,6";
+  $get_products = "select * from produtos order by 1 DESC LIMIT 0,6";
 
   $run_products = mysqli_query($db, $get_products);
 
 
   while ($row_products = mysqli_fetch_array($run_products)) {
- // Obtém informações do produto.
-    $pro_id = $row_products['product_id'];
+    // Obtém informações do produto.
+    $pro_id = $row_products['produto_id'];
 
-    $pro_title = $row_products['product_title'];
+    $pro_title = $row_products['produto_título'];
 
-    $pro_price = $row_products['product_price'];
+    $pro_price = $row_products['produto_preço'];
 
-    $pro_img1 = $row_products['product_img1'];
+    $pro_img1 = $row_products['produto_img1'];
 
-    $pro_label = $row_products['product_label'];
+    $pro_label = $row_products['produto_label'];
 
-    $manufacturer_id = $row_products['manufacturer_id'];
- 
-   // Obtém o nome do fabricante.
-    $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
+    $manufacturer_id = $row_products['fabricante_id'];
+
+    // Obtém o nome do fabricante.
+    $get_manufacturer = "select * from fabricantes where fabricante_id='$manufacturer_id'";
 
     $run_manufacturer = mysqli_query($db, $get_manufacturer);
 
     $row_manufacturer = mysqli_fetch_array($run_manufacturer);
 
-    $manufacturer_name = $row_manufacturer['manufacturer_title'];
+    $manufacturer_name = $row_manufacturer['fabricante_título'];
 
-    $pro_psp_price = $row_products['product_psp_price'];
+    $pro_psp_price = $row_products['produto_psp_preço'];
 
-    $pro_url = $row_products['product_url'];
-// Verifica e formata o preço com base na etiqueta do produto.
+    $pro_url = $row_products['produto_url'];
+    // Verifica e formata o preço com base na etiqueta do produto.
     if ($pro_label == "Oferta" or $pro_label == "Presente") {
 
       $product_price = "<del> R$$pro_price </del>";
@@ -124,7 +124,7 @@ function getPro()
       $product_price = "R$$pro_price";
     }
 
- // Cria um rótulo de oferta se aplicável.
+    // Cria um rótulo de oferta se aplicável.
     if ($pro_label == "") {
     } else {
 
@@ -141,7 +141,7 @@ function getPro()
 ";
     }
 
- // Exibe o produto na página.
+    // Exibe o produto na página.
     echo "
 
 <div class='col-md-4 col-sm-6 single' >
@@ -197,7 +197,7 @@ $product_label
 function getProducts()
 {
 
-   // Função para obter e exibir produtos com base em filtros.
+  // Função para obter e exibir produtos com base em filtros.
 
   global $db;
 
@@ -211,7 +211,7 @@ function getProducts()
 
       if ((int)$sVal != 0) {
 
-        $aWhere[] = 'manufacturer_id=' . (int)$sVal;
+        $aWhere[] = 'fabricante_id=' . (int)$sVal;
       }
     }
   }
@@ -264,39 +264,39 @@ function getProducts()
 
   $sWhere = (count($aWhere) > 0 ? ' WHERE ' . implode(' or ', $aWhere) : '') . $sLimit;
 
-  $get_products = "select * from products  " . $sWhere;
+  $get_products = "select * from produtos  " . $sWhere;
 
   $run_products = mysqli_query($db, $get_products);
 
-     // Obtém informações do produto.
+  // Obtém informações do produto.
   while ($row_products = mysqli_fetch_array($run_products)) {
 
-    $pro_id = $row_products['product_id'];
+    $pro_id = $row_products['produto_id'];
 
-    $pro_title = $row_products['product_title'];
+    $pro_title = $row_products['produto_título'];
 
-    $pro_price = $row_products['product_price'];
+    $pro_price = $row_products['produto_preço'];
 
-    $pro_img1 = $row_products['product_img1'];
+    $pro_img1 = $row_products['produto_img1'];
 
-    $pro_label = $row_products['product_label'];
+    $pro_label = $row_products['produto_label'];
 
-    $manufacturer_id = $row_products['manufacturer_id'];
+    $manufacturer_id = $row_products['fabricante_id'];
 
-     // Obtém o nome do fabricante.
-    $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
+    // Obtém o nome do fabricante.
+    $get_manufacturer = "select * from fabricante where fabricante_id='$manufacturer_id'";
 
     $run_manufacturer = mysqli_query($db, $get_manufacturer);
 
     $row_manufacturer = mysqli_fetch_array($run_manufacturer);
 
-    $manufacturer_name = $row_manufacturer['manufacturer_title'];
+    $manufacturer_name = $row_manufacturer['fabricante_título'];
 
-    $pro_psp_price = $row_products['product_psp_price'];
+    $pro_psp_price = $row_products['produto_psp_preço'];
 
-    $pro_url = $row_products['product_url'];
+    $pro_url = $row_products['produto_url'];
 
- // Verifica e formata o preço com base na etiqueta do produto.
+    // Verifica e formata o preço com base na etiqueta do produto.
     if ($pro_label == "Oferta" or $pro_label == "Presente") {
 
       $product_price = "<del> R$$pro_price </del>";
@@ -309,7 +309,7 @@ function getProducts()
       $product_price = "R$$pro_price";
     }
 
-// Cria um rótulo de oferta se aplicável.
+    // Cria um rótulo de oferta se aplicável.
     if ($pro_label == "") {
     } else {
 
@@ -326,7 +326,7 @@ function getProducts()
 ";
     }
 
- // Exibe o produto na página.
+    // Exibe o produto na página.
     echo "
 
 <div class='col-md-4 col-sm-6 center-responsive' >
@@ -370,7 +370,7 @@ $product_label
 
 ";
   }
-/// função getProducts Código Termina ///
+  /// função getProducts Código Termina ///
 
 
 
@@ -384,7 +384,7 @@ $product_label
 function getPaginator()
 {
 
-// Função para gerar a navegação de paginação.
+  // Função para gerar a navegação de paginação.
 
   $per_page = 6;
 
@@ -402,16 +402,16 @@ function getPaginator()
 
       if ((int)$sVal != 0) {
 
-        $aWhere[] = 'manufacturer_id=' . (int)$sVal;
+        $aWhere[] = 'fabricante_id=' . (int)$sVal;
 
         $aPath .= 'man[]=' . (int)$sVal . '&';
       }
     }
   }
 
-// função de itens Termina ///
+  // função de itens Termina ///
 
-// função total_price começa //
+  // função total_price começa //
 
   if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
 
@@ -426,9 +426,9 @@ function getPaginator()
     }
   }
 
-// função de itens Termina ///
+  // função de itens Termina ///
 
-// função total_price começa //
+  // função total_price começa //
 
   if (isset($_REQUEST['cat']) && is_array($_REQUEST['cat'])) {
 
@@ -447,7 +447,7 @@ function getPaginator()
 
   $sWhere = (count($aWhere) > 0 ? ' WHERE ' . implode(' or ', $aWhere) : '');
 
-  $query = "select * from products " . $sWhere;
+  $query = "select * from produto " . $sWhere;
 
   $result = mysqli_query($db, $query);
 

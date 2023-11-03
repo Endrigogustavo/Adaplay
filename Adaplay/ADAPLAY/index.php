@@ -82,23 +82,28 @@ include("includes/main.php");
   </div>
 </div>
 
-<div class="herocontainer">
-      <img src="images/herobanner.jpg" alt="">
-      <div class="hero-text">
-        <h1>Brinque sem Limites</h1>
-        <p>
-Nossa primeira loja foi concebida com adaptações tanto nos produtos quanto no site, visando oferecer a melhor experiência aos clientes,
- tornando a compra mais acessível e conveniente.
-        </p>
-        <button>Sobre nós</button>
-      </div>
+<div class="graphicbanner">
+  <div class="bannertext">
+    <h1>Brinque sem Limites</h1>
+    <p>
+      Nossa primeira loja foi concebida com adaptações tanto nos produtos quanto no site, visando oferecer a melhor
+      experiência aos clientes,
+      tornando a compra mais acessível e conveniente.
+    </p>
+    <button>Sobre nós</button>
+  </div>
+  <div class="imagem">
+    <img
+      src="images/banner1.png"
+      alt="Produtos da Loja">
+  </div>
 </div>
 
 <section class="simplecards">
   <div class="textosin">
     <h1>Categorias</h1>
   </div>
-  
+
   <div class="conteudoscategoria">
     <div class="categorias">
 

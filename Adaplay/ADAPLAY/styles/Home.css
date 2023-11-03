@@ -114,12 +114,12 @@ a.button:hover {
   opacity: 1;
   height: 12px;
   width: 12px;
-  background-color: #e7e7e7;
+  background-color: #f2f2f2;
   visibility: hidden;
 }
 
 .swiper-pagination-bullet-active {
-  border: 2px solid #e7e7e7;
+  border: 2px solid #f2f2f2;
   background-color: #ff7f32;
 }
 
@@ -204,44 +204,52 @@ a.button:hover {
   filter: grayscale(0%);
 }
 
-/*Hero Banner*/
-.herocontainer {
+/*Graphic Banner------------------------------------------------------------------------------------------------------------------------------*/
+
+.graphicbanner {
   overflow: hidden;
+  width: 100vw;
   height: 60vh;
-  width: 100%;
-  background: #11111f;
-
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 40px;
+  flex-direction: row;
+  background: linear-gradient(180deg, rgba(235, 235, 235, 1) 0%, rgba(17, 17, 31, 1) 0.5%, rgba(17, 17, 31, 1) 10%);
 }
 
-.herocontainer img {
-  width: 100%;
-  height: 35em;
+
+
+.graphicbanner div {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.herocontainer .hero-text {
-  width: 80%;
-  text-align: center;
+.graphicbanner .bannertext {
+  color: #f2f2f2;
+  text-align: justify;
 }
 
-.herocontainer .hero-text h1 {
+.graphicbanner .bannertext h1 {
   font-size: 3.3rem;
   margin-bottom: 12px;
   color: #ff6000;
 }
 
-.herocontainer .hero-text p {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  color: #ebebeb;
 
+.graphicbanner .bannertext p {
+  font-size: 1.6rem;
+  max-width: 70%;
+  text-wrap: wrap;
 }
 
-.herocontainer button {
+
+.graphicbanner button {
   padding: 1em 2.1em 1.1em;
   border-radius: 4px;
   margin: 8px;
@@ -256,33 +264,59 @@ a.button:hover {
   transition: color 3s ease-in-out;
 }
 
+.graphicbanner button:hover {
+  background-color: #f2f2f2;
+  transition: 0.3s ease-in;
+}
 
-/* Media queries */
-
-@media (max-width: 1100px) {
-  .herocontainer {
-    height: auto;
-    margin-top: 10px;
-    flex-direction: column;
-  }
-
-  .herocontainer .hero-text {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .herocontainer .hero-text h1 {
-    font-size: 3rem;
-  }
-
+.graphicbanner .imagem img {
+  max-width: 100%;
+  height: 50em;
 
 }
 
+@media (max-width: 1100px) {
+  .graphicbanner {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .graphicbanner div {
+    width: 100%;
+    height: 100%;
+  }
+
+  .graphicbanner .bannertext h1 {
+    font-size: 3rem;
+  }
+
+  .graphicbanner .imagem img {
+    height: 45em;
+
+  }
+
+}
+
+
 @media (max-width: 678px) {
-  .herocontainer .hero-text h1 {
+  .graphicbanner .bannertext h1 {
     font-size: 2rem;
   }
+
+  .graphicbanner .imagem img {
+    height: 38em;
+
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .graphicbanner .imagem img {
+    height: 32em;
+
+  }
+
 }
 
 
@@ -312,6 +346,7 @@ a.button:hover {
   text-align: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .textosin h1 {
@@ -348,7 +383,7 @@ a.button:hover {
   transform: scale(.98) translateY(-1px);
   cursor: pointer;
   transition: 0.3s;
-  filter: drop-shadow(3px 10px 4px #11111f);
+  filter: drop-shadow(0px 10px 4px #11111f);
 }
 
 

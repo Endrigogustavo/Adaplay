@@ -1,7 +1,8 @@
+[19:19] DANILO SANTOS SOARES
 <?php
 // Inicia a sessão para armazenar informações do carrinho
 session_start();
-
+ 
 //Variáveis de Link
 $index= "index.php";
 $register = "customer_register.php";
@@ -12,21 +13,21 @@ $products = "shop.php";
 $contato = "contact.php";
 $logout = "logout.php";
 $checkout = "checkout.php";
-
-
+ 
+ 
 // Inclui o arquivo de conexão com o banco de dados
 include("includes/db.php");
-
+ 
 // Inclui o cabeçalho da página
 include("includes/header.php");
-
+ 
 // Inclui funções úteis para o carrinho de compras
 include("functions/functions.php");
-
+ 
 // Inclui o conteúdo principal da página
 include("includes/main.php");
 ?>
-
+ 
 <!-- MAIN -->
 <main>
   <!-- HERO -->
@@ -38,26 +39,26 @@ include("includes/main.php");
     </p>
   </div>
 </main>
-
+ 
 <div id="content"><!-- conteúdo Começa -->
   <div class="container"><!-- container Começa -->
     <div class="col-md-9" id="cart"><!-- col-md-9 Começa -->
       <div class="box"><!-- caixa Começa -->
         <form action="cart.php" method="post" enctype="multipart-form-data"><!-- formulário Começa -->
           <h1> Carrinho de Compras </h1>
-
+ 
           <?php
           // Obtém o endereço IP do usuário atual
           $ip_add = getRealUserIp();
-
+ 
           // Seleciona os produtos no carrinho do usuário com base no endereço IP
           $selectCarrinho = "select * from cart where ip_add='$ip_add'";
           $runCarrinho = mysqli_query($con, $selectCarrinho);
           $count = mysqli_num_rows($runCarrinho);
           ?>
-
+ 
           <p class="text-muted"> Você tem atualmente <?php echo $count; ?> item(s) no seu carrinho. </p>
-
+ 
           <div class="table-responsive"><!-- tabela-responsiva Começa -->
             <table class="table"><!-- tabela Começa -->
               <thead><!-- cabeçalho Começa -->
@@ -70,32 +71,32 @@ include("includes/main.php");
                   <th colspan="2"> Subtotal </th>
                 </tr>
               </thead><!-- cabeçalho Termina -->
-
+ 
               <tbody><!-- corpo Começa -->
                 <?php
                 // Inicializa o total do carrinho
                 $total = 0;
-
+ 
                 // Loop pelos produtos no carrinho
                 while ($colunaCarrinho = mysqli_fetch_array($runCarrinho)) {
                   $idProduto = $colunaCarrinho['p_id'];
                   $proSize = $colunaCarrinho['size'];
                   $quantidadeProduto = $colunaCarrinho['qty'];
                   $precoUnico = $colunaCarrinho['p_price'];
-
+ 
                   // Obtém informações detalhadas do produto
-                  $getProduto = "select * from products where product_id='$idProduto'";
+                  $getProduto = "select * from produto where produto_id='$idProduto'";
                   $runProduto = mysqli_query($con, $getProduto);
-
+ 
                   // Loop pelos resultados do produto
                   while ($rowProducts = mysqli_fetch_array($runProduto)) {
-                    $tituloProduto = $rowProducts['product_title'];
-                    $produtoImagem1 = $rowProducts['product_img1'];
+                    $tituloProduto = $rowProducts['produto_título'];
+                    $produtoImagem1 = $rowProducts['produto_img1'];
                     $subtotal = $precoUnico * $quantidadeProduto;
-
+ 
                     // Armazena a quantidade do produto na sessão
                     $_SESSION['quantidadeProduto'] = $quantidadeProduto;
-
+ 
                     // Atualiza o total do carrinho
                     $total += $subtotal;
                 ?>
@@ -129,7 +130,7 @@ include("includes/main.php");
                 }
                 ?>
               </tbody><!-- corpo Termina -->
-
+ 
               <tfoot><!-- rodapé Começa -->
                 <tr>
                   <th colspan="5"> Total </th>
@@ -137,7 +138,7 @@ include("includes/main.php");
                 </tr>
               </tfoot><!-- rodapé Termina -->
             </table><!-- tabela Termina -->
-
+ 
             <div class="form-inline pull-right"><!-- form-inline pull-right Começa -->
               <div class="form-group"><!-- form-group Começa -->
                 <label>Código de Cupom : </label>
@@ -148,7 +149,7 @@ include("includes/main.php");
               <input class="btn btn-primary" type="submit" name="Cupom_Aplicar" value="Aplicar Cupom">
             </div><!-- form-inline pull-right Termina -->
           </div><!-- tabela-responsiva Termina -->
-
+ 
           <div class="box-footer"><!-- rodapé da caixa Começa -->
             <div class="pull-left"><!-- pull-left Começa -->
               <a href="index.php" class="btn btn-default">
@@ -159,13 +160,13 @@ include("includes/main.php");
               <button class="btn btn-info" type="submit" name="update">
                 <i class="fa fa-refresh"></i> Atualizar Carrinho
               </button>
-
+ 
               <?php
               // Verifica se a quantidade de algum produto no carrinho é igual a zero.
               $quantidadeZero = false;
-              $getCart = "select * from cart where ip_add='$ip_add'";
+              $getCart = "select * from preço  where ip_add='$ip_add'";
               $runCart = mysqli_query($con, $getCart);
-
+ 
               // Loop pelos produtos no carrinho para verificar se algum tem quantidade zero.
               while ($rowCart = mysqli_fetch_array($runCart)) {
                 $quantidadeProduto = $rowCart['qty'];
@@ -174,7 +175,7 @@ include("includes/main.php");
                   break;
                 }
               }
-
+ 
               // Se nenhum produto tiver quantidade igual a zero, exibe o botão de checkout.
               if (!$quantidadeZero) {
                 echo '<a href="checkout.php" class="btn btn-success">
@@ -192,7 +193,7 @@ include("includes/main.php");
           </div><!-- rodapé da caixa Termina -->
         </form><!-- formulário Termina -->
       </div><!-- caixa Termina -->
-
+ 
       <?php
       // Lógica para aplicar um cupom de desconto
       if (isset($_POST['Cupom_Aplicar'])) {
@@ -201,33 +202,33 @@ include("includes/main.php");
           // Nenhum código de cupom fornecido
         } else {
           // Verificar se o código de cupom é válido
-          $getCupom = "select * from coupons where coupon_code='$Codigo'";
+          $getCupom = "select * from cupons where cupom_code='$Codigo'";
           $runCupom = mysqli_query($con, $getCupom);
           $checarCupom = mysqli_num_rows($runCupom);
           if ($checarCupom == 1) {
             $colunaCupons = mysqli_fetch_array($runCupom);
-            $produtoCupom = $colunaCupons['product_id'];
-            $valorCupom = $colunaCupons['coupon_price'];
-            $limiteCupom = $colunaCupons['coupon_limit'];
-            $cupomUtilizado = $colunaCupons['coupon_used'];
+            $produtoCupom = $colunaCupons['produto_id'];
+            $valorCupom = $colunaCupons['cupom_preço'];
+            $limiteCupom = $colunaCupons['cupom_limit'];
+            $cupomUtilizado = $colunaCupons['cupom_used'];
             if ($limiteCupom == $cupomUtilizado) {
               // Cupom atingiu seu limite de uso
               echo "<script>alert('Infelizmente seu código de cupom expirou.')</script>";
             } else {
               // Verificar se o produto associado ao cupom está no carrinho
-              $getCart = "select * from cart where p_id='$produtoCupom' AND ip_add='$ip_add'";
+              $getCart = "select * from carrinho where p_id='$produtoCupom' AND ip_add='$ip_add'";
               $runCarrinho = mysqli_query($con, $getCart);
               $checkCart = mysqli_num_rows($runCarrinho);
               if ($checkCart == 1) {
                 // Incrementar o uso do cupom e calcular o desconto
-                $addUsed = "update coupons set coupon_used=coupon_used+1 where coupon_code='$Codigo'";
+                $addUsed = "update cupons set cupom_used=cupom_used+1 where cupom_code='$Codigo'";
                 $runUsed = mysqli_query($con, $addUsed);
                 $valorCupom = min($valorCupom, $precoUnico);
                 // Aplica o desconto proporcional à quantidade de produtos no carrinho
                 $descontoPorProduto = $valorCupom / $quantidadeProduto;
                 $precoUnico = $precoUnico - $descontoPorProduto;
                 // Atualizar o preço do produto no carrinho com o desconto
-                $updateCart = "UPDATE cart SET p_price = '$precoUnico' WHERE p_id='$produtoCupom' AND ip_add='$ip_add'";
+                $updateCart = "UPDATE carrinho SET p_preço = '$precoUnico' WHERE p_id='$produtoCupom' AND ip_add='$ip_add'";
                 $runUpdate = mysqli_query($con, $updateCart);
                 echo "<script>alert('Seu cupom foi aplicado com sucesso.')</script>";
                 echo "<script>window.open('cart.php','_self')</script>";
@@ -243,7 +244,7 @@ include("includes/main.php");
         }
       }
       ?>
-
+ 
       <?php
       // Função para atualizar o carrinho de compras
       function updateCart()
@@ -252,7 +253,7 @@ include("includes/main.php");
         if (isset($_POST['update'])) {
           foreach ($_POST['remove'] as $removeId) {
             // Remove o produto do carrinho
-            $deleteProduct = "delete from cart where p_id='$removeId'";
+            $deleteProduct = "delete from carrinho where p_id='$removeId'";
             $runDelete = mysqli_query($con, $deleteProduct);
             if ($runDelete) {
               echo "<script>window.open('cart.php','_self')</script>";
@@ -263,34 +264,34 @@ include("includes/main.php");
       // Chama a função para atualizar o carrinho de compras
       echo @$upCart = updateCart();
       ?>
-
+ 
       <div id="row same-height-row"><!-- linha same-height-row Começa -->
         <div class="col-md-3 col-sm-6"><!-- col-md-3 col-sm-6 Começa -->
           <div class="box same-height headline"><!-- caixa same-height headline Começa -->
             <h3 class="text-center"> Você pode gostar destes produtos </h3>
           </div><!-- caixa same-height headline Termina -->
         </div><!-- col-md-3 col-sm-6 Termina -->
-
+ 
         <?php
         // Seleciona produtos aleatórios para exibir como recomendações
-        $getProduto = "select * from products order by rand() LIMIT 0,3";
+        $getProduto = "select * from produtos order by rand() LIMIT 0,3";
         $runProduto = mysqli_query($con, $getProduto);
-
+ 
         // Loop pelos produtos recomendados
         while ($rowProducts = mysqli_fetch_array($runProduto)) {
-          $idProduto = $rowProducts['product_id'];
-          $tituloProduto = $rowProducts['product_title'];
-          $precoProduto = $rowProducts['product_price'];
-          $produtoImagem1 = $rowProducts['product_img1'];
-          $produtoRotulo = $rowProducts['product_label'];
-          $idFabricante = $rowProducts['manufacturer_id'];
-          $getManufacturer = "select * from manufacturers where manufacturer_id='$idFabricante'";
+          $idProduto = $rowProducts['produto_id'];
+          $tituloProduto = $rowProducts['produto_título'];
+          $precoProduto = $rowProducts['produto_preço'];
+          $produtoImagem1 = $rowProducts['produto_img1'];
+          $produtoRotulo = $rowProducts['produto_label'];
+          $idFabricante = $rowProducts['fabricante_id'];
+          $getManufacturer = "select * from fabricantes where fabricantes_id='$idFabricante'";
           $runManufacturer = mysqli_query($db, $getManufacturer);
           $rowManufacturer = mysqli_fetch_array($runManufacturer);
-          $nomeFabricante = $rowManufacturer['manufacturer_title'];
-          $proPspPrice = $rowProducts['product_psp_price'];
-          $proUrl = $rowProducts['product_url'];
-
+          $nomeFabricante = $rowManufacturer['fabricante_título'];
+          $proPspPrice = $rowProducts['produto_psp_preço'];
+          $proUrl = $rowProducts['produto_url'];
+ 
           // Lógica para exibir preço com desconto se houver rótulo "Oferta" ou "Presente"
           if ($produtoRotulo == "Oferta" or $produtoRotulo == "Presente") {
             $productPrice = "<del> R$$precoProduto </del>";
@@ -299,7 +300,7 @@ include("includes/main.php");
             $productPspPrice = "";
             $productPrice = "R$$precoProduto";
           }
-
+ 
           // Lógica para exibir rótulo de oferta se aplicável
           if ($produtoRotulo == "") {
           } else {
@@ -310,7 +311,7 @@ include("includes/main.php");
 </a>
 ";
           }
-
+ 
           // Exibe os produtos recomendados
           echo "
 <div class='col-md-3 col-sm-6 center-responsive' >
@@ -337,7 +338,7 @@ $productLabel
         ?>
       </div><!-- linha same-height-row Termina -->
     </div><!-- col-md-9 Termina -->
-
+ 
     <div class="col-md-3"><!-- col-md-3 Começa -->
       <div class="box" id="order-summary"><!-- caixa Começa -->
         <div class="box-header"><!-- caixa-header Começa -->
@@ -373,7 +374,7 @@ $productLabel
     </div><!-- col-md-3 Termina -->
   </div><!-- container Termina -->
 </div><!-- conteúdo Termina -->
-
+ 
 <!-- Scripts JavaScript -->
 <script src="js/jquery.min.js"> </script>
 <script src="js/bootstrap.min.js"></script>
@@ -399,5 +400,5 @@ $productLabel
   });
 </script>
 </body>
-
+ 
 </html>
