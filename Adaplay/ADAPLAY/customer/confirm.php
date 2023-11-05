@@ -16,7 +16,7 @@ if (!isset($_SESSION['customer_email'])) {
     if (isset($_GET['order_id'])) {
         $order_id = $_GET['order_id'];
         // Consulta o banco de dados para obter o valor devido para o pedido especificado.
-        $query = "SELECT due_amount FROM customer_orders WHERE order_id = $order_id";
+        $query = "SELECT due_quantia FROM cliente_ordens WHERE order_id = $order_id";
         $result = mysqli_query($con, $query);
     // Obtém o valor devido do resultado da consulta.
         if ($row = mysqli_fetch_assoc($result)) {

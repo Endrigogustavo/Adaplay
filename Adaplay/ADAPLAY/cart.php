@@ -1,4 +1,4 @@
-[19:19] DANILO SANTOS SOARES
+
 <?php
 // Inicia a sessão para armazenar informações do carrinho
 session_start();
@@ -52,7 +52,7 @@ include("includes/main.php");
           $ip_add = getRealUserIp();
  
           // Seleciona os produtos no carrinho do usuário com base no endereço IP
-          $selectCarrinho = "select * from cart where ip_add='$ip_add'";
+          $selectCarrinho = "select * from carrinho where ip_add='$ip_add'";
           $runCarrinho = mysqli_query($con, $selectCarrinho);
           $count = mysqli_num_rows($runCarrinho);
           ?>
@@ -80,12 +80,12 @@ include("includes/main.php");
                 // Loop pelos produtos no carrinho
                 while ($colunaCarrinho = mysqli_fetch_array($runCarrinho)) {
                   $idProduto = $colunaCarrinho['p_id'];
-                  $proSize = $colunaCarrinho['size'];
+                  $proSize = $colunaCarrinho['tamanho'];
                   $quantidadeProduto = $colunaCarrinho['qty'];
-                  $precoUnico = $colunaCarrinho['p_price'];
+                  $precoUnico = $colunaCarrinho['p_preço'];
  
                   // Obtém informações detalhadas do produto
-                  $getProduto = "select * from produto where produto_id='$idProduto'";
+                  $getProduto = "select * from produtos where produto_id='$idProduto'";
                   $runProduto = mysqli_query($con, $getProduto);
  
                   // Loop pelos resultados do produto

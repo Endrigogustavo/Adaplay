@@ -231,4 +231,3 @@ if (isset($_GET['id'])) {
     echo "<script language='javascript'>window.location.href='contact.php';</script>";
 }
 ?>
-tem menu de contexto

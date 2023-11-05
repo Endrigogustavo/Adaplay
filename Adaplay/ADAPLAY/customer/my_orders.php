@@ -28,15 +28,15 @@
 
             $customer_session = $_SESSION['customer_email'];
  // Obtém informações do cliente com base no endereço de email da sessão.
-            $get_customer = "select * from customers where customer_email='$customer_session'";
+            $get_customer = "select * from clientes where cliente_email='$customer_session'";
 
             $run_customer = mysqli_query($con, $get_customer);
 
             $row_customer = mysqli_fetch_array($run_customer);
 
-            $customer_id = $row_customer['customer_id'];
+            $customer_id = $row_customer['cliente_id'];
  // Obtém os pedidos do cliente com base no seu ID.
-            $get_orders = "select * from customer_orders where customer_id='$customer_id'";
+            $get_orders = "select * from cliente_ordens where cliente_id='$customer_id'";
 
             $run_orders = mysqli_query($con, $get_orders);
 
@@ -45,19 +45,19 @@
             // Loop para exibir os dados dos pedidos.
             while ($row_orders = mysqli_fetch_array($run_orders)) {
 
-                $order_id = $row_orders['order_id'];
+                $order_id = $row_orders['ordem_id'];
 
-                $due_amount = $row_orders['due_amount'];
+                $due_amount = $row_orders['due_quantia'];
 
-                $invoice_no = $row_orders['invoice_no'];
+                $invoice_no = $row_orders['fatura_no'];
 
                 $qty = $row_orders['qty'];
 
-                $size = $row_orders['size'];
+                $size = $row_orders['tamanho'];
 
-                $order_date = substr($row_orders['order_date'], 0, 11);
+                $order_date = substr($row_orders['ordem_date'], 0, 11);
 
-                $order_status = $row_orders['order_status'];
+                $order_status = $row_orders['ordem_status'];
 
                 $i++;
 

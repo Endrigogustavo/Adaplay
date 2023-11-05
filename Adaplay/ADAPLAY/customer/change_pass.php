@@ -53,7 +53,7 @@ if (isset($_POST['Enviar'])) {
 // Obtém a nova senha novamente do campo de entrada do formulário.
     $new_pass_again = $_POST['new_pass_again'];
  // Consulta para verificar se a senha antiga corresponde à senha armazenada no banco de dados.
-    $sel_old_pass = "select * from customers where customer_pass='$old_pass'";
+    $sel_old_pass = "select * from clientes where cliente_passar='$old_pass'";
 // Executa a consulta.
     $run_old_pass = mysqli_query($con, $sel_old_pass);
  // Verifica quantas linhas foram retornadas pela consulta.
@@ -61,19 +61,19 @@ if (isset($_POST['Enviar'])) {
  // Se a senha antiga não corresponder, exibe um alerta e encerra o script.
     if ($check_old_pass == 0) {
 
-        echo "<script>alert('Your Current Password is not valid try again')</script>";
+        echo "<script>alert('Sua senha atual não é válida, tente novamente')</script>";
 
         exit();
     }
  // Atualiza a senha do cliente no banco de dados.
     if ($new_pass != $new_pass_again) {
 
-        echo "<script>alert('Your New Password dose not match')</script>";
+        echo "<script>alert('Sua nova senha não corresponde')</script>";
 
         exit();
     }
 
-    $update_pass = "update customers set customer_pass='$new_pass' where customer_email='$c_email'";
+    $update_pass = "update cliente_passar set cliente_passar='$new_pass' where cliente_email='$c_email'";
 
     $run_pass = mysqli_query($con, $update_pass);
  // Se a atualização for bem-sucedida, exibe um alerta e redireciona para a página 'my_account.php?my_orders'.

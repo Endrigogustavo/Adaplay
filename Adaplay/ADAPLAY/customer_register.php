@@ -396,7 +396,7 @@ if (isset($_POST['register'])) {
 
 
     mail($c_email, $subject, $message, $headers);
-    $insert_customer = "insert into clientes (cliente_nome,cliente_email,cliente_passar,cliente_país,cliente_city,	cliente_contact,	cliente_address,cliente_image,	cliente_ip,cliente_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
+    $insert_customer = "insert into clientes (cliente_nome,cliente_email,cliente_senha,cliente_país,cliente_cidade,	cliente_contact,	cliente_endereco,cliente_image,	cliente_ip,cliente_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
     $run_customer = mysqli_query($con, $insert_customer);
     $sel_cart = "select * from carrinho where ip_add='$c_ip'";
     $run_cart = mysqli_query($con, $sel_cart);
@@ -430,7 +430,7 @@ if (isset($_POST['login'])) {
     $customer_pass = $_POST['c_pass'];
     // Obtém o valor do campo de senha do formulário
 
-    $select_customer = "select * from clientes where cliente_email='$customer_email' AND 	cliente_passar='$customer_pass'";
+    $select_customer = "select * from clientes where cliente_email='$customer_email' AND 	cliente_senha='$customer_pass'";
     // Cria uma consulta SQL para verificar se o email e a senha correspondem a um registro na tabela de clientes
 
     $run_customer = mysqli_query($con, $select_customer);
@@ -477,7 +477,7 @@ if (isset($_POST['login'])) {
         $_SESSION['customer_email'] = $customer_email;
         // Define a variável de sessão 'customer_email' com o valor do email do cliente
 
-        echo "<script>alert('You are Logged In')</script>";
+        echo "<script>alert('Você está logado')</script>";
         // Exibe um alerta informando que o cliente está logado
 
         echo "<script>window.open('checkout.php','_self')</script>";

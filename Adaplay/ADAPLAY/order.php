@@ -34,11 +34,11 @@ while ($row_cart = mysqli_fetch_array($run_cart)) {
     $sub_total = $row_cart['p_price'] * $pro_qty; // Calcula o subtotal do produto.
  
     // Insere um registro na tabela 'customer_orders' para registrar o pedido do cliente.
-    $insert_customer_order = "insert into pendente_orders (cliente_id, fatura_no, produto_id, qty, tamanho, data_pedido, ordem_status) values ('$customer_id', '$sub_total', '$invoice_no', '$pro_qty', '$pro_size', NOW(), '$status')";
+    $insert_customer_order = "insert into cliente_ordens (cliente_id, fatura_no, produto_id, qty, tamanho, data_pedido, ordem_status) values ('$customer_id', '$sub_total', '$invoice_no', '$pro_qty', '$pro_size', NOW(), '$status')";
     $run_customer_order = mysqli_query($con, $insert_customer_order);
  
     // Insere um registro na tabela 'pending_orders' para registrar o pedido pendente.
-    $insert_pending_order = "insert into pendente_orders (cliente_id, fatura_no, produto_id, qty, tamanho, data_pedido, ordem_status) values ('$customer_id', '$invoice_no', '$pro_id', '$pro_qty', '$pro_size', '$status')";
+    $insert_pending_order = "insert into cliente_ordens (cliente_id, fatura_no, produto_id, qty, tamanho, data_pedido, ordem_status) values ('$customer_id', '$invoice_no', '$pro_id', '$pro_qty', '$pro_size', '$status')";
     $run_pending_order = mysqli_query($con, $insert_pending_order);
  
     // Remove o item do carrinho após processamento do pedido.
