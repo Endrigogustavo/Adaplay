@@ -116,12 +116,12 @@ if (!isset($_SESSION['customer_email'])) {
             $message = "
 
 <h2>
-Email Confirmation By Computerfever.com $c_name
+Confirmação de e-mail por Computerfever.com $c_name
 </h2>
 
 <a href='localhost/ecom_store/customer/my_account.php?$customer_confirm_code'>
 
-Click Here To Confirm Email
+Clique aqui para confirmar e-mail
 
 </a>
 

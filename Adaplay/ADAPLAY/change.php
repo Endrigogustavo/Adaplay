@@ -21,7 +21,7 @@ if (isset($_POST['id'])) {
 
     $qty = $_POST['quantity'];
 
-    $change_qty = "update cart set qty='$qty' where p_id='$id' AND ip_add='$ip_add'";
+    $change_qty = "update carrinho set qty='$qty' where p_id='$id' AND ip_add='$ip_add'";
 
     $run_qty = mysqli_query($con, $change_qty);
 }

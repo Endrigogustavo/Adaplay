@@ -4,7 +4,7 @@
 
         <?php
 
-        $customer_session = $_SESSION['customer_email'];
+        $customer_session = $_SESSION['cliente_email'];
 
         $get_customer = "select * from clientes where cliente_email='$customer_session'";
 
@@ -16,7 +16,7 @@
 
         $customer_name = $row_customer['cliente_nome'];
 
-        if (!isset($_SESSION['customer_email'])) {
+        if (!isset($_SESSION['cliente_email'])) {
         } else {
 
             echo "

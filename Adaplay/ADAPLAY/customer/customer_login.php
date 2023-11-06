@@ -103,7 +103,7 @@
         if ($check_customer == 1 and $check_cart == 0) {
             // Se um cliente corresponder e não houver itens no carrinho
  
-            $_SESSION['cliente_email'] = $customer_email;
+            $_SESSION['customer_email'] = $customer_email;
             // Define a variável de sessão 'customer_email' com o valor do email do cliente
  
             echo "<script>alert('Conta Acessada.')</script>";

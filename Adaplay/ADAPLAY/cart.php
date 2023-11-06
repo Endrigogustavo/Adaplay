@@ -92,7 +92,7 @@ include("includes/main.php");
                   while ($rowProducts = mysqli_fetch_array($runProduto)) {
                     $tituloProduto = $rowProducts['produto_título'];
                     $produtoImagem1 = $rowProducts['produto_img1'];
-                    $subtotal = $precoUnico * $quantidadeProduto;
+                    $subtotal = floatval($precoUnico) * floatval($quantidadeProduto);
  
                     // Armazena a quantidade do produto na sessão
                     $_SESSION['quantidadeProduto'] = $quantidadeProduto;
@@ -164,7 +164,7 @@ include("includes/main.php");
               <?php
               // Verifica se a quantidade de algum produto no carrinho é igual a zero.
               $quantidadeZero = false;
-              $getCart = "select * from preço  where ip_add='$ip_add'";
+              $getCart = "select * from carrinho where ip_add='$ip_add'";
               $runCart = mysqli_query($con, $getCart);
  
               // Loop pelos produtos no carrinho para verificar se algum tem quantidade zero.
@@ -285,7 +285,7 @@ include("includes/main.php");
           $produtoImagem1 = $rowProducts['produto_img1'];
           $produtoRotulo = $rowProducts['produto_label'];
           $idFabricante = $rowProducts['fabricante_id'];
-          $getManufacturer = "select * from fabricantes where fabricantes_id='$idFabricante'";
+          $getManufacturer = "select * from fabricantes where fabricante_id='$idFabricante'";
           $runManufacturer = mysqli_query($db, $getManufacturer);
           $rowManufacturer = mysqli_fetch_array($runManufacturer);
           $nomeFabricante = $rowManufacturer['fabricante_título'];
@@ -381,7 +381,7 @@ $productLabel
 <script>
   $(document).ready(function(data) {
     $(document).on('keyup', '.quantity', function() {
-      var id = $(this).data("product_id");
+      var id = $(this).data("produto_id");
       var quantity = $(this).val();
       if (quantity != '') {
         $.ajax({

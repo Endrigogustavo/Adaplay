@@ -50,7 +50,7 @@ function total_price()
  
   $total = 0;
  
-  $select_cart = "select * from preço where ip_add='$ip_add'";
+  $select_cart = "select * from carrinho where ip_add='$ip_add'";
  
   $run_cart = mysqli_query($db, $select_cart);
  
@@ -61,7 +61,7 @@ function total_price()
     $pro_qty = $record['qty'];
  
  
-    $sub_total = $record['p_price'] * $pro_qty;
+    $sub_total = $record['p_preço'] * $pro_qty;
  
     $total += $sub_total;
   }
