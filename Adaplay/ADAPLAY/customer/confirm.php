@@ -2,7 +2,7 @@
 
 session_start();
 // Verifica se a variável de sessão 'customer_email' não está definida, o que significa que o usuário não está logado.
-if (!isset($_SESSION['cliente_email'])) {
+if (!isset($_SESSION['customer_email'])) {
  // Redireciona o usuário para a página de checkout se ele não estiver logado.
     echo "<script>window.open('../checkout.php','_self')</script>";
 } else {
@@ -13,14 +13,14 @@ if (!isset($_SESSION['cliente_email'])) {
     include("../includes/main.php");
 
     // Verifica se o parâmetro 'order_id' foi passado na URL
-    if (isset($_GET['ordem_id'])) {
-        $order_id = $_GET['ordem_id'];
+    if (isset($_GET['order_id'])) {
+        $order_id = $_GET['order_id'];
         // Consulta o banco de dados para obter o valor devido para o pedido especificado.
-        $query = "SELECT due_quantia FROM cliente_ordens WHERE ordem_id = $order_id";
+        $query = "SELECT due_amount FROM customer_orders WHERE order_id = $order_id";
         $result = mysqli_query($con, $query);
     // Obtém o valor devido do resultado da consulta.
         if ($row = mysqli_fetch_assoc($result)) {
-            $due_amount = $row['due_quantia'];
+            $due_amount = $row['due_amount'];
         } else {
             echo "Erro ao finalizar a compra.";
         }

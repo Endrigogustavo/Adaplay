@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost", "root", "", "db_Adaplay");
+$db = mysqli_connect("localhost", "root", "", "ecom_store");
 
 /// IP address code starts /////
 function getRealUserIp()
@@ -27,7 +27,7 @@ function items()
 
   $ip_add = getRealUserIp();
 
-  $get_items = "select * from carrinho where ip_add='$ip_add'";
+  $get_items = "select * from cart where ip_add='$ip_add'";
 
   $run_items = mysqli_query($db, $get_items);
 

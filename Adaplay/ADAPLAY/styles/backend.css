@@ -166,6 +166,12 @@ button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
+#deletebutton{ /*CSS do Botão de Delete*/
+  border: none;
+  font-size: 1.5em;
+  color: #ff3232;
+}
+
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
@@ -1198,13 +1204,14 @@ nav {
   text-decoration: none;
 }
 
+/* Responsividade-css */
+
 @media (max-width: 1275px) {
   .logozinha span {
-    visibility: hidden;
+    display: none;
   }
 }
 
-/* Responsive-css */
 @media (max-width: 890px) {
   nav {
     padding: 20px 3%;
@@ -1277,13 +1284,13 @@ nav {
   }
 
   .logozinha span {
-    visibility: visible;
+    display: inline;
   }
 }
 
 @media (max-width: 385px) {
   .logozinha span {
-    visibility: hidden;
+    display: none;
   }
 
 }

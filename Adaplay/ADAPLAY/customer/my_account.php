@@ -49,16 +49,15 @@ if (!isset($_SESSION['customer_email'])) {
         // Obtém o endereço de e-mail do cliente da sessão
         $c_email = $_SESSION['customer_email'];
         // Cria uma consulta SQL para buscar informações do cliente com base no endereço de e-mail
-        $get_customer = "select * from clientes
-        where cliente_email='$c_email'";
+        $get_customer = "select * from customers where customer_email='$c_email'";
         // Executa a consulta SQL
         $run_customer = mysqli_query($con, $get_customer);
         // Extrai dados do cliente do resultado da consulta
         $row_customer = mysqli_fetch_array($run_customer);
         // Obtém o código de confirmação do cliente
-        $customer_confirm_code = $row_customer['cliente_confirm_code'];
+        $customer_confirm_code = $row_customer['customer_confirm_code'];
         // Se houver um código de confirmação não vazio, exibe uma mensagem de alerta
-        $c_name = $row_customer['cliente_nome'];
+        $c_name = $row_customer['customer_name'];
 
         if (!empty($customer_confirm_code)) {
 
@@ -98,11 +97,11 @@ if (!isset($_SESSION['customer_email'])) {
           // Verifica as ações que o cliente deseja executar e inclui o conteúdo apropriado
           if (isset($_GET[$customer_confirm_code])) {
             // Atualiza o código de confirmação do cliente no banco de dados
-            $update_customer = "update clientes set cliente_confirm_code='' where cliente_confirm_code='$customer_confirm_code'";
+            $update_customer = "update customers set customer_confirm_code='' where customer_confirm_code='$customer_confirm_code'";
             // Executa a consulta SQL de atualização
             $run_confirm = mysqli_query($con, $update_customer);
 
-            echo "<script>alert('Seu email foi confirmado')</script>";
+            echo "<script>alert('Your Email Has Been Confirmed')</script>";
 
             echo "<script>window.open('my_account.php?my_orders','_self')</script>";
           }
@@ -116,12 +115,12 @@ if (!isset($_SESSION['customer_email'])) {
             $message = "
 
 <h2>
-Confirmação de e-mail por Computerfever.com $c_name
+Email Confirmation By Computerfever.com $c_name
 </h2>
 
 <a href='localhost/ecom_store/customer/my_account.php?$customer_confirm_code'>
 
-Clique aqui para confirmar e-mail
+Click Here To Confirm Email
 
 </a>
 
@@ -133,7 +132,7 @@ Clique aqui para confirmar e-mail
             // Exibe uma mensagem de alerta informando que o e-mail de confirmação foi enviado e redireciona para a página de pedidos
             mail($c_email, $subject, $message, $headers);
 
-            echo "<script>alert('Seu e-mail de confirmação foi enviado para você, verifique sua caixa de entrada')</script>";
+            echo "<script>alert('Your Confirmation Email Has Been sent to you, check your inbox')</script>";
 
             echo "<script>window.open('my_account.php?my_orders','_self')</script>";
           }

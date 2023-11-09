@@ -16,13 +16,36 @@ $checkout = "checkout.php";
 
 include("includes/db.php");
 
-include("includes/header.php");
+
 include("functions/functions.php");
 include("includes/main.php");
 
 
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto" rel="stylesheet">
+  <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="images/logo2.png">
+  <title>ADAPLAY</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="styles/bootstrap.css" rel="stylesheet">
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/backend.css" rel="stylesheet">
+  <link href="styles/style.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/myaccount.css">
+
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
 
 <!--alt shift F -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -143,8 +166,6 @@ body {
   display: none;
 }
 
-
-
 .controls:focus {
   border-color: #4d90fe;
 }
@@ -225,7 +246,7 @@ body {
       <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
 
 
-      <div style="display: none">
+      <div class="u">
       <input
         id="pac-input"
         class="controls"
@@ -257,7 +278,7 @@ body {
       <div class="toggle-panel toggle-right">
         <h1>Adaplay</h1>
         <img src="images/Cadastro/Cadastro.png" alt="" class="Img-fun2">
-        <p>já tem uma conta? click em login</p>
+        <p>click aqui para logar</p>
         <button class="hiddenn" id="registerr">Login</button>
       </div>
     </div>
@@ -375,7 +396,8 @@ if (isset($_POST['register'])) {
   if ($result['success'] == 0) {
     $c_name = $_POST['c_name'];
     $c_email = $_POST['c_email'];
-    $c_pass = $_POST['c_pass'];
+    //$c_pass = password_hash($_POST['c_pass'], PASSWORD_DEFAULT) ;
+    $c_pass =$_POST['c_pass'] ;
     $c_country = $_POST['c_country'];
     $c_city = $_POST['c_city'];
     $c_contact = $_POST['c_contact'];
@@ -384,7 +406,7 @@ if (isset($_POST['register'])) {
     $c_image_tmp = $_FILES['c_image']['tmp_name'];
     $c_ip = getRealUserIp();
     move_uploaded_file($c_image_tmp, "customer/customer_images/$c_image");
-    $get_email = "select * from clientes where cliente_email='$c_email'";
+    $get_email = "select * from customers where customer_email='$c_email'";
     $run_email = mysqli_query($con, $get_email);
     $check_email = mysqli_num_rows($run_email);
 
@@ -396,9 +418,9 @@ if (isset($_POST['register'])) {
 
 
     mail($c_email, $subject, $message, $headers);
-    $insert_customer = "insert into clientes (cliente_nome,cliente_email,cliente_senha,cliente_país,cliente_cidade,	cliente_contact,	cliente_endereco,cliente_image,	cliente_ip,cliente_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
+    $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip,customer_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
     $run_customer = mysqli_query($con, $insert_customer);
-    $sel_cart = "select * from carrinho where ip_add='$c_ip'";
+    $sel_cart = "select * from cart where ip_add='$c_ip'";
     $run_cart = mysqli_query($con, $sel_cart);
     $check_cart = mysqli_num_rows($run_cart);
 
@@ -430,7 +452,7 @@ if (isset($_POST['login'])) {
     $customer_pass = $_POST['c_pass'];
     // Obtém o valor do campo de senha do formulário
 
-    $select_customer = "select * from clientes where cliente_email='$customer_email' AND 	cliente_senha='$customer_pass'";
+    $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass'";
     // Cria uma consulta SQL para verificar se o email e a senha correspondem a um registro na tabela de clientes
 
     $run_customer = mysqli_query($con, $select_customer);
@@ -442,7 +464,7 @@ if (isset($_POST['login'])) {
     $check_customer = mysqli_num_rows($run_customer);
     // Verifica quantas linhas correspondem à consulta SQL, ou seja, se o login foi bem-sucedido
 
-    $select_cart = "select * from carrinho where ip_add='$get_ip'";
+    $select_cart = "select * from cart where ip_add='$get_ip'";
     // Cria uma consulta SQL para buscar informações do carrinho com base no endereço IP do usuário
 
     $run_cart = mysqli_query($con, $select_cart);
@@ -477,7 +499,7 @@ if (isset($_POST['login'])) {
         $_SESSION['customer_email'] = $customer_email;
         // Define a variável de sessão 'customer_email' com o valor do email do cliente
 
-        echo "<script>alert('Você está logado')</script>";
+        echo "<script>alert('You are Logged In')</script>";
         // Exibe um alerta informando que o cliente está logado
 
         echo "<script>window.open('checkout.php','_self')</script>";

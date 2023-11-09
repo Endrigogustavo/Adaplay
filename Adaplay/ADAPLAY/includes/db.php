@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost","root","","db_adaplay");
+$con = mysqli_connect("localhost","root","","ecom_store");
 
 ?>
 

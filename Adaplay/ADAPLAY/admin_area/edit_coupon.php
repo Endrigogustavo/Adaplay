@@ -36,15 +36,15 @@ $c_limit = $row_edit['coupon_limit'];
 
 $c_used = $row_edit['coupon_used'];
 
-$p_id = $row_edit['produto_id'];
+$p_id = $row_edit['product_id'];
 
-$get_products = "select * from produtos where produto_id='$p_id'";
+$get_products = "select * from products where product_id='$p_id'";
 
 $run_products = mysqli_query($con,$get_products);
 
 $row_products = mysqli_fetch_array($run_products);
 
-$product_id = $row_products['produto_id'];
+$product_id = $row_products['product_id'];
 
 $product_title = $row_products['product_title'];
 
@@ -153,13 +153,13 @@ $product_title = $row_products['product_title'];
 
 <?php
 
-$get_p = "select * from produto where status='product'";
+$get_p = "select * from products where status='product'";
 
 $run_p = mysqli_query($con,$get_p);
 
 while($row_p = mysqli_fetch_array($run_p)){
 
-$p_id = $row_p['produto_id'];
+$p_id = $row_p['product_id'];
 
 $p_title = $row_p['product_title'];
 
@@ -183,7 +183,7 @@ $run_p = mysqli_query($con,$get_p);
 
 while($row_p = mysqli_fetch_array($run_p)){
 
-$p_id = $row_p['produto_id'];
+$p_id = $row_p['product_id'];
 
 $p_title = $row_p['product_title'];
 

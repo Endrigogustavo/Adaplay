@@ -5,12 +5,12 @@
   $session_email = $_SESSION['customer_email'];
   
   // Consulta o banco de dados para obter informações do cliente com base no email.
-  $select_customer = "select * from clientes where cliente_email='$session_email'";
+  $select_customer = "select * from customers where customer_email='$session_email'";
   $run_customer = mysqli_query($con, $select_customer);
   $row_customer = mysqli_fetch_array($run_customer);
   
   // Obtém o ID do cliente.
-  $customer_id = $row_customer['cliente_id'];
+  $customer_id = $row_customer['customer_id'];
   ?>
 
   <h1 class="text-center">Pagamentos para você</h1>
@@ -38,20 +38,20 @@
     $ip_add = getRealUserIp();
     
     // Consulta o carrinho do usuário com base no endereço IP.
-    $get_cart = "select * from carrinho where ip_add='$ip_add'";
+    $get_cart = "select * from cart where ip_add='$ip_add'";
     $run_cart = mysqli_query($con, $get_cart);
     
     // Loop para processar cada item no carrinho.
     while ($row_cart = mysqli_fetch_array($run_cart)) {
       $pro_id = $row_cart['p_id'];
       $pro_qty = $row_cart['qty'];
-      $pro_price = $row_cart['p_preço'];
+      $pro_price = $row_cart['p_price'];
       
       // Consulta informações do produto com base no ID.
-      $get_products = "select * from produtos where produto_id ='$pro_id'";
+      $get_products = "select * from products where product_id='$pro_id'";
       $run_products = mysqli_query($con, $get_products);
       $row_products = mysqli_fetch_array($run_products);
-      $product_title = $row_products['produto_título'];
+      $product_title = $row_products['product_title'];
       
       // Incrementa a variável de contagem.
       $i++;
