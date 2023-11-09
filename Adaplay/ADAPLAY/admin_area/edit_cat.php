@@ -37,48 +37,48 @@ $new_c_image = $row_edit['cat_image'];
 
 ?>
 
-<div class="row"><!-- 1 row Starts -->
+<div class="row"><!-- 1 linha começa -->
 
-<div class="col-lg-12"><!-- col-lg-12 Starts -->
+<div class="col-lg-12"><!-- col-lg-12 Inicia -->
 
-<ol class="breadcrumb"><!-- breadcrumb Starts -->
+<ol class="breadcrumb"><!-- breadcrumb Inicia -->
 
 <li>
 
-<i class="fa fa-dashboard"></i> Dashboard / Edit Category
+<i class="fa fa-dashboard"></i> Painel / Editar categoria
 
 </li>
 
-</ol><!-- breadcrumb Ends -->
+</ol><!-- breadcrumb Termina -->
 
-</div><!-- col-lg-12 Ends -->
+</div><!-- col-lg-12 Termina -->
 
-</div><!-- 1 row Ends -->
+</div><!-- Fim de 1 linha -->
 
 
-<div class="row"><!-- 2 row Starts -->
+<div class="row"><!-- Início de 2 linhas -->
 
-<div class="col-lg-12"><!-- col-lg-12 Starts -->
+<div class="col-lg-12"><!-- col-lg-12 Inicia -->
 
-<div class="panel panel-default"><!-- panel panel-default Starts -->
+<div class="panel panel-default"><!-- panel panel-default Inicia -->
 
-<div class="panel-heading"><!-- panel-heading Starts -->
+<div class="panel-heading"><!-- cabeçalho do painel Inicia -->
 
-<h3 class="panel-title"><!-- panel-title Starts -->
+<h3 class="panel-title"><!-- panel-title Inicia -->
 
-<i class="fa fa-money fa-fw"></i> Edit Category
+<i class="fa fa-money fa-fw"></i> Editar categoria
 
-</h3><!-- panel-title Ends -->
+</h3><!-- panel-title Termina -->
 
 </div><!-- panel-heading Ends -->
 
-<div class="panel-body"><!-- panel-body Starts -->
+<div class="panel-body"><!-- panel-body Inicia -->
 
 <form class="form-horizontal" action="" method="post" enctype="multipart/form-data"><!-- form-horizontal Starts -->
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">Category Title</label>
+<label class="col-md-3 control-label">Título da categoria</label>
 
 <div class="col-md-6">
 
@@ -86,11 +86,11 @@ $new_c_image = $row_edit['cat_image'];
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group"><!-- form-group Inicia -->
 
-<label class="col-md-3 control-label">Show as Category Top</label>
+<label class="col-md-3 control-label">Mostrar como categoria superior</label>
 
 <div class="col-md-6">
 
@@ -102,15 +102,16 @@ $new_c_image = $row_edit['cat_image'];
 <input type="radio" name="cat_top" value="no" 
 <?php if($c_top == 'no'){ echo "checked='checked'"; }else{} ?>>
 
-<label>No</label>
+<label>Não</label>
 
 </div>
 
-</div><!-- form-group Ends -->
+</div>
+<!-- form-group Termina -->
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">Select Category Image</label>
+<label class="col-md-3 control-label">Selecione a imagem da categoria</label>
 
 <div class="col-md-6">
 
@@ -122,10 +123,10 @@ $new_c_image = $row_edit['cat_image'];
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group"><!-- form-group Inicia -->
 
 <label class="col-md-3 control-label"></label>
 
@@ -135,17 +136,17 @@ $new_c_image = $row_edit['cat_image'];
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-</form><!-- form-horizontal Ends -->
+</form><!-- form-horizontal Termina -->
 
-</div><!-- panel-body Ends -->
+</div><!-- panel-body Termina -->
 
-</div><!-- panel panel-default Ends -->
+</div><!-- panel panel-default Termina -->
 
-</div><!-- col-lg-12 Ends -->
+</div><!-- col-lg-12 Termina -->
 
-</div><!-- 2 row Ends -->
+</div><!-- 2 row Termina -->
 
 <?php
 
@@ -173,7 +174,7 @@ $run_cat = mysqli_query($con,$update_cat);
 
 if($run_cat){
 
-echo "<script>alert('One Category Has Been Updated')</script>";
+echo "<script>alert('Uma categoria foi atualizada')</script>";
 
 echo "<script>window.open('index.php?view_cats','_self')</script>";
 

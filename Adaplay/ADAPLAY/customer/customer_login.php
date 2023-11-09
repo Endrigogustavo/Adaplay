@@ -1,5 +1,7 @@
 <div class="box2"><!--Inicio da Box -->
     <link href="styles/Login2.css" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png">
+
     <div class="box-header"><!-- Inicio da box-header  -->
 
     </div><!-- fim da box-header  -->
@@ -110,22 +112,17 @@
             $_SESSION['customer_email'] = $customer_email;
             // Define a variável de sessão 'customer_email' com o valor do email do cliente
 
-            echo "<script>alert('Conta Acessada.')</script>";
-            // Exibe um alerta informando que o cliente está logado
-
-            echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
-            // Redireciona o cliente para a página 'my_account.php' com a consulta de 'my_orders' como parâmetro
+           
+            echo "<script>window.open('customer/load.php?my_orders','_self')</script>";
+        // Redireciona o cliente para a página 'LOAD.php' 
         } else {
             // Se um cliente corresponder e houver itens no carrinho
 
             $_SESSION['customer_email'] = $customer_email;
             // Define a variável de sessão 'customer_email' com o valor do email do cliente
 
-            echo "<script>alert('You are Logged In')</script>";
-            // Exibe um alerta informando que o cliente está logado
-
-            echo "<script>window.open('checkout.php','_self')</script>";
-            // Redireciona o cliente para a página 'checkout.php'
+            echo "<script>window.open('customer/load.php?my_orders','_self')</script>";
+            // Redireciona o cliente para a página 'Load.php'
         }
     }
 

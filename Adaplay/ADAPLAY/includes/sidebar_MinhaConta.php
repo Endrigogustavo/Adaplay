@@ -1,6 +1,6 @@
-<div class="panel panel-default sidebar-menu"><!-- panel panel-default sidebar-menu Starts -->
+<div class="panel panel-default sidebar-menu"><!-- painel painel-default sidebar-menu Inicia -->
 
-    <div class="panel-heading"><!-- panel-heading Starts -->
+    <div class="panel-heading"><!-- cabeçalho do painel Inicia -->
 
         <?php
 
@@ -35,12 +35,11 @@
         }
 
         ?>
+    </div><!-- cabeçalho do painel Termina -->
 
-    </div><!-- panel-heading Ends -->
+    <div class="panel-body"><!-- panel-body Inicia -->
 
-    <div class="panel-body"><!-- panel-body Starts -->
-
-        <ul class="nav nav-pills nav-stacked"><!-- nav nav-pills nav-stacked Starts -->
+        <ul class="nav nav-pills nav-stacked"><!-- nav nav-pills nav-stacked Inicia -->
 
             <li class="<?php if (isset($_GET['my_orders'])) {
                 echo "active";
@@ -88,9 +87,8 @@
 
             </li>
 
+        </ul><!-- nav nav-pills nav-stacked Termina -->
 
-        </ul><!-- nav nav-pills nav-stacked Ends -->
+    </div><!-- painel-body Termina -->
 
-    </div><!-- panel-body Ends -->
-
-</div><!-- panel panel-default sidebar-menu Ends -->
+</div><!-- painel painel-default sidebar-menu Termina -->

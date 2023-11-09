@@ -120,6 +120,15 @@ td.btn_list {
     color: #000000;
 }
 
+
+.bear-image {
+    position: absolute;
+    bottom: 0;
+    right: 35px;
+    width: 22%;
+    height: auto;
+}
+
 section.images .circle {
     position: absolute;
     height: 80%;
@@ -130,3 +139,27 @@ section.images .circle {
     clip-path: circle(40% at right 80%);
     z-index: -1;
 }
+
+@media (max-width:1200px){
+    .bear-image {
+        width: 25%;
+    }
+
+}
+
+@media (max-width:1332px){
+    .bear-image {
+        width: 21%;
+    }
+
+}
+
+@media (max-width:768px){
+    .bear-image {
+        display: none;
+    }
+
+}
+
+
+

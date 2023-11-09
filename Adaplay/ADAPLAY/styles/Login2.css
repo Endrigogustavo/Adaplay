@@ -63,7 +63,7 @@ body::before{
     z-index: -1;
     width: calc(100% + 30px);
     height: calc(100% + 30px);
-    background: linear-gradient(45deg,#ff3300,#d14403,#e9810b);
+    background: linear-gradient(50deg, #ff9900, #ff8800, #ff7700, #ff6600, #ff5500, #ff4400, #ff3300, #ff4400, #ff5500, #ff6600);
     background-size:300%;
     border-radius: 8px;
     animation: AnimarBorda 8s linear infinite;

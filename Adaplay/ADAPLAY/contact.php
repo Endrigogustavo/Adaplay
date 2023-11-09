@@ -1,6 +1,5 @@
-
 <?php
-$index= "index.php";
+$index = "index.php";
 $register = "customer_register.php";
 $conta = "customer/my_account.php?my_orders";
 $cart = "cart.php";
@@ -9,6 +8,7 @@ $products = "shop.php";
 $contato = "#.php";
 $logout = "logout.php";
 $checkout = "checkout.php";
+$sobrenos = "about.php";
 
 
 include("includes/Contact_Us.php");
@@ -34,7 +34,9 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/style_Contact.css">
     <title>Formulário de Contato</title>
 </head>
@@ -44,7 +46,7 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
     <div class="container">
         <!--INSERIR MSG DO CLIENTE NO BANCO DE DADOS-->
         <?php
-        
+
         if (isset($_POST['btn_submit'])) {
             // EDITAR
             if (isset($_GET['id_up']) && !empty($_GET['id_up'])) {
@@ -59,12 +61,12 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
                     $p->atualizarDados($id_upd, $nome, $email, $assunto, $telefone, $mensagem);
                     echo "<script language='javascript'>window.location.href='contact.php';</script>";
                 } else {
-        ?>
+                    ?>
                     <div class='aviso'>
                         <img src="images/erro.svg" alt="Error">
                         <h5>Não foi possível atualizar, por favor, preencha todos os campos!</h5>
                     </div>
-                <?php
+                    <?php
                 }
             }
             // CADASTRAR MSG NOVA
@@ -78,12 +80,12 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
                 if (!empty($nome) && !empty($email) && !empty($assunto) && !empty($telefone) && !empty($mensagem)) {
                     $p->cadastrarMensagem($nome, $email, $assunto, $telefone, $mensagem);
                 } else {
-                ?>
+                    ?>
                     <div class='aviso'>
                         <img src="images/erro.svg" alt="Error">
                         <h5>Por favor, preencha todos os campos!</h5>
                     </div>
-        <?php
+                    <?php
                 }
             }
         }
@@ -105,15 +107,18 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="nome">Nome:</label>
-                        <input id="nome" type="text" class="form-control name" placeholder="Nome completo" name="nome" value="<?php if (isset($res)) {
-                                                                                                                                    echo $res['nome'];
-                                                                                                                                } ?>" />
+                        <input id="nome" type="text" class="form-control name" placeholder="Nome completo" name="nome"
+                            value="<?php if (isset($res)) {
+                                echo $res['nome'];
+                            } ?>" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="email">Email:</label>
-                        <input class="form-control email" id="email" type="email" name="email" placeholder="Endereço de email" value="<?php if (isset($res)) {
-                                                                                                                                            echo $res['email'];
-                                                                                                                                        } ?>" />
+                        <input class="form-control email" id="email" type="email" name="email"
+                            placeholder="Endereço de email"
+                            value="<?php if (isset($res)) {
+                                echo $res['email'];
+                            } ?>" />
                     </div>
                 </div>
                 <div class="form-row">
@@ -131,29 +136,35 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
                     </div>
                     <div class="form-group col-md-4">
                         <label for="telefone">Telefone:</label>
-                        <input type="text" class="form-control phone" placeholder="(DDD) número" id="telefone" name="telefone" value="<?php if (isset($res)) {
-                                                                                                                                            echo $res['telefone'];
-                                                                                                                                        } ?>" />
+                        <input type="text" class="form-control phone" placeholder="(DDD) número" id="telefone"
+                            name="telefone"
+                            value="<?php if (isset($res)) {
+                                echo $res['telefone'];
+                            } ?>" />
                         <br />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="mensagem">Mensagem:</label>
-                        <textarea class="form-control" id="mensagem" rows="6" name="mensagem" placeholder="Escreva a sua mensagem..."><?php if (isset($res)) {
-                                                                                                                                            echo $res['mensagem'];
-                                                                                                                                        } ?></textarea>
+                        <textarea class="form-control" id="mensagem" rows="6" name="mensagem"
+                            placeholder="Escreva a sua mensagem..."><?php if (isset($res)) {
+                                echo $res['mensagem'];
+                            } ?></textarea>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8">
-                        <input type="button" id="btn_hidden" class="btn_view btn btn-secondary btn-lg" value="Visualizar Mensagens">
-                        <input type="button" id="btn_hidden2" class="btn_hidden btn btn-secondary btn-lg hidden" value="Ocultar Mensagens">
+                        <input type="button" id="btn_hidden" class="btn_view btn btn-secondary btn-lg"
+                            value="Visualizar Mensagens">
+                        <input type="button" id="btn_hidden2" class="btn_hidden btn btn-secondary btn-lg hidden"
+                            value="Ocultar Mensagens">
                         <input type="submit" name="btn_submit" value="<?php if (isset($res)) {
-                                                                            echo "Atualizar";
-                                                                        } else {
-                                                                            echo "Enviar";
-                                                                        } ?>" id="btn_sub" class="btn btn-success btn-lg">
+                            echo "Atualizar";
+                        } else {
+                            echo "Enviar";
+                        } ?>" id="btn_sub"
+                            class="btn btn-success btn-lg">
                     </div>
                 </div>
             </form>
@@ -186,12 +197,12 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
                                     echo "<td>" . $value . "</td>";
                                 }
                             }
-                    ?>
+                            ?>
                             <td class="btn_list">
                                 <a class="btn btn-secondary" href="contact.php?id_up=<?php echo $dados[$i]['id']; ?>">Editar</a>
                                 <a class="btn btn-danger" href="contact.php?id=<?php echo $dados[$i]['id']; ?>">Excluir</a>
                             </td>
-                        <?php
+                            <?php
                             echo "</tr>";
                         }
                     } else {
@@ -199,22 +210,29 @@ $p = new Cliente("127.0.0.1", "3308", "ecom_store", "root", "");
                         <div class="aviso">
                             <h5>Ainda não há mensagens cadastradas!</h5>
                         </div>
-                    <?php
+                        <?php
                     }
                     ?>
                 </tbody>
             </table>
         </section>
-        
-    <section class="images">
-  <div class="circle"></div>
-</section>
+
+        <section class="images">
+            <div class="circle"></div>
+            <img src="images/brinquedos.png" alt="Bear Image" class="bear-image">
+        </section>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 

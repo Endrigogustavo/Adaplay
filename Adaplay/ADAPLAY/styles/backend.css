@@ -166,7 +166,8 @@ button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
-#deletebutton{ /*CSS do Botão de Delete*/
+#deletebutton {
+  /*CSS do Botão de Delete*/
   border: none;
   font-size: 1.5em;
   color: #ff3232;
@@ -394,6 +395,15 @@ body {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.icon-image {
+  width: 20px;
+  /* Largura desejada para o ícone */
+  height: auto;
+  /* Isso manterá a proporção da imagem */
+  margin-left: 5px;
+  /* Ajuste conforme necessário para o alinhamento horizontal */
 }
 
 @-webkit-keyframes a {
@@ -645,7 +655,7 @@ img {
 .line-footer {
   background-color: #ff7f32;
   height: 2px;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -689,7 +699,7 @@ img {
 }
 
 .page-footer .footer-nav__col .phone__number {
-  color: #00c8c8;
+  color: #11111f;
   font-size: 14px;
   text-decoration: underline;
   -webkit-transition: color 0.2s;
@@ -706,7 +716,7 @@ img {
 }
 
 .page-footer .footer-nav__col .email__addr {
-  color: #00c8c8;
+  color: #11111f;
   font-size: 14px;
   text-decoration: underline;
   -webkit-transition: color 0.2s;
@@ -1288,7 +1298,7 @@ nav {
   }
 }
 
-@media (max-width: 385px) {
+@media (max-width: 399px) {
   .logozinha span {
     display: none;
   }

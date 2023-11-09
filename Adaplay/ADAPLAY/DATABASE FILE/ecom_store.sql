@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18/09/2023 às 06:12
+-- Tempo de geração: 09/11/2023 às 07:21
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -20,7 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `ecom_store`
 --
-create database `ecom_store`;
+
+Create database `ecom_store`;
 use `ecom_store`;
 
 -- --------------------------------------------------------
@@ -113,10 +114,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_top`, `cat_image`) VALUES
-(2, 'Feminine', 'no', 'feminelg.png'),
-(3, 'Kids', 'no', 'kidslg.jpg'),
-(4, 'Others', 'yes', 'othericon.png'),
-(5, 'Men', 'yes', 'malelg.png');
+(2, 'Feminine', 'não', 'feminelg.png'),
+(3, 'Kids', 'não', 'kidslg.jpg'),
+(4, 'Others', 'sim', 'othericon.png'),
+(5, 'Men', 'sim', 'malelg.png');
 
 -- --------------------------------------------------------
 
@@ -216,14 +217,7 @@ CREATE TABLE `customer_orders` (
 --
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
-(33, 7, 120, 868259345, 1, 'Pequeno', '2023-08-16 14:03:15', 'pending'),
-(34, 7, 90, 800308188, 1, 'Pequeno', '2023-08-16 15:20:11', 'pending'),
-(35, 7, 90, 631149204, 1, 'Pequeno', '2023-08-25 00:13:22', 'pending'),
-(36, 7, 120, 714565636, 1, 'Pequeno', '2023-09-15 06:54:38', 'pending'),
-(37, 9, 466, 1928425727, 1, 'Pequeno', '2023-09-17 05:24:29', 'Complete'),
-(38, 9, 55, 1638651532, 1, 'Pequeno', '2023-09-17 05:32:04', 'pending'),
-(39, 9, 800, 1256324032, 1, 'Pequeno', '2023-09-18 03:01:58', 'pending'),
-(40, 9, 80, 1256324032, 1, 'Pequeno', '2023-09-18 03:01:58', 'pending');
+(41, 9, 290, 619037725, 1, 'Pequeno', '2023-11-09 05:55:12', 'Pago');
 
 -- --------------------------------------------------------
 
@@ -243,12 +237,12 @@ CREATE TABLE `manufacturers` (
 --
 
 INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_top`, `manufacturer_image`) VALUES
-(2, 'Adidas', 'no', 'adilg.png'),
-(3, 'Nike', 'no', 'niketransl.png'),
-(4, 'Philip Plein', 'no', 'pplg.png'),
-(5, 'Lacoste', 'no', 'lacostelg.png'),
-(7, 'Polo', 'no', 'polobn.jpg'),
-(8, 'Gildan 1800', 'no', 'sample_img360.png');
+(2, 'Adidas', 'não', 'adilg.png'),
+(3, 'Nike', 'não', 'niketransl.png'),
+(4, 'Philip Plein', 'não', 'pplg.png'),
+(5, 'Lacoste', 'não', 'lacostelg.png'),
+(7, 'Polo', 'não', 'polobn.jpg'),
+(8, 'Gildan 1800', 'não', 'sample_img360.png');
 
 -- --------------------------------------------------------
 
@@ -313,6 +307,13 @@ CREATE TABLE `pending_orders` (
   `order_status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Despejando dados para a tabela `pending_orders`
+--
+
+INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
+(41, 9, 619037725, '34', 1, 'Pequeno', 'Pago');
+
 -- --------------------------------------------------------
 
 --
@@ -346,15 +347,15 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_url`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_psp_price`, `product_desc`, `product_features`, `product_video`, `product_keywords`, `product_label`, `status`) VALUES
 (25, 4, 3, 2, '2023-09-16 23:03:38', 'Teste', 'TesteUrl', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 350, 300, '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', 'Teste', 'Presente', 'product'),
-(26, 5, 3, 3, '2023-09-16 22:55:36', 'Teste - 2', 'Teste2Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 800, 400, '\r\nbbbbbbbbb\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', 'Teste 2', 'Novo', 'product'),
-(27, 6, 4, 4, '2023-09-16 23:03:51', 'Teste - 3', 'Teste3Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 200, 100, '\r\nccccccccccccccccccc\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', 'Teste - 3 ', 'Oferta', 'product'),
-(28, 7, 5, 5, '2023-09-16 23:13:26', 'Teste - 4', 'Teste4Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 50, 40, '\r\n\r\ncccccccccccccc', '\r\n\r\n', '\r\n\r\n', 'Teste - 4', 'Novo', 'product'),
-(29, 9, 2, 7, '2023-09-16 23:15:05', 'Teste - 5', 'Teste5Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 500, 466, '\r\n\r\neeeeeeeeeeeeeeeeeee', '\r\n\r\n', '\r\n\r\n', 'Teste - 5', 'Presente', 'product'),
-(30, 6, 4, 8, '2023-09-17 04:59:26', 'Teste - 6', 'Teste6Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 900, 500, '\r\n\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '\r\n\r\n', '\r\n\r\n', 'Teste - 6 ', 'Oferta', 'product'),
-(31, 8, 3, 2, '2023-09-17 05:00:27', 'Teste - 7', 'Teste7Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 65, 55, '\r\n\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '\r\n\r\n', '\r\n\r\n', 'Teste - 7', 'Presente', 'product'),
+(26, 4, 3, 3, '2023-11-09 05:45:18', 'Teste - 2', 'Teste2Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 800, 400, '\r\n\r\nbbbbbbbbb\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n\r\n\r\n', 'Teste 2', 'Novo', 'product'),
+(27, 4, 4, 4, '2023-11-09 05:45:01', 'Teste - 3', 'Teste3Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 200, 100, '\r\n\r\nccccccccccccccccccc\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n\r\n\r\n', 'Teste - 3 ', 'Oferta', 'product'),
+(28, 4, 5, 5, '2023-11-09 05:45:13', 'Teste - 4', 'Teste4Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 50, 40, '\r\n\r\n\r\ncccccccccccccc\r\n', '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', 'Teste - 4', 'Novo', 'product'),
+(29, 4, 2, 7, '2023-11-09 05:45:27', 'Teste - 5', 'Teste5Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 500, 466, '\r\n\r\n\r\neeeeeeeeeeeeeeeeeee\r\n', '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', 'Teste - 5', 'Presente', 'product'),
+(30, 4, 4, 8, '2023-11-09 05:45:37', 'Teste - 6', 'Teste6Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 900, 500, '\r\n\r\n\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n', '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', 'Teste - 6 ', 'Oferta', 'product'),
+(31, 4, 3, 2, '2023-11-09 05:46:57', 'Teste - 7', 'Teste7Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 65, 55, '\r\n\r\n\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n', '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', 'Teste - 7', 'Presente', 'product'),
 (32, 4, 2, 7, '2023-09-17 05:01:21', 'Teste - 8', 'Teste8Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 80, 60, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '\r\n\r\n', '\r\n\r\n', 'Teste - 8', 'Novo', 'product'),
-(33, 7, 3, 5, '2023-09-17 05:04:40', 'Teste - 0', 'Teste0Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 150, 50, '\r\n\r\ndddddddddddddddddddddddddddddddddddd', '\r\n\r\n', '\r\n\r\n', 'Teste - 0', 'Novo', 'product'),
-(34, 6, 3, 3, '2023-09-17 06:51:32', 'Teste - 9', 'Teste9Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 345, 290, 'aaaaaaaaaaaaaaaaavc\r\n\r\n', '\r\n\r\n', '\r\n\r\n', 'Teste - 9', 'Presente', 'product');
+(33, 4, 3, 5, '2023-11-09 05:45:56', 'Teste - 0', 'Teste0Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 150, 50, '\r\n\r\n\r\ndddddddddddddddddddddddddddddddddddd\r\n', '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', 'Teste - 0', 'Novo', 'product'),
+(34, 4, 3, 3, '2023-11-09 05:46:02', 'Teste - 9', 'Teste9Url', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 'indisponivel-vodute.png', 345, 290, '\r\naaaaaaaaaaaaaaaaavc\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', 'Teste - 9', 'Presente', 'product');
 
 -- --------------------------------------------------------
 
@@ -374,12 +375,8 @@ CREATE TABLE `product_categories` (
 --
 
 INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_top`, `p_cat_image`) VALUES
-(4, 'Coats', 'no', 'coaticn.png'),
-(5, 'T-Shirts', 'no', 'tshirticn.png'),
-(6, 'Sweater', 'no', 'sweatericn.png'),
-(7, 'jackets', 'yes', 'jacketicn.png'),
-(8, 'Sneakers', 'yes', 'sneakericn.png'),
-(9, 'Trousers', 'no', 'trousericn.png');
+(4, 'Adaptados', 'sim', 'adaptado.png'),
+(5, 'Comuns', 'não', 'Comum.png');
 
 -- --------------------------------------------------------
 
@@ -543,13 +540,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT de tabela `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de tabela `manufacturers`
 --
 ALTER TABLE `manufacturers`
-  MODIFY `manufacturer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `manufacturer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `message_clients`
@@ -567,7 +564,7 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT de tabela `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de tabela `products`
@@ -579,7 +576,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT de tabela `product_categories`
 --
 ALTER TABLE `product_categories`
-  MODIFY `p_cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `p_cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `wishlist`

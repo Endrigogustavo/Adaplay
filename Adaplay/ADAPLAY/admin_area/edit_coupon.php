@@ -54,47 +54,47 @@ $product_title = $row_products['product_title'];
 
 ?>
 
-<div class="row"><!-- 1 row Starts -->
+<div class="row"><!-- 1 row Começa -->
 
-<div class="col-lg-12"><!-- col-lg-12 Starts -->
+<div class="col-lg-12"><!-- col-lg-12 Começa -->
 
-<ol class="breadcrumb"><!-- breadcrumb Starts -->
+<ol class="breadcrumb"><!-- breadcrumb Começa -->
 
 <li class="active">
 
-<i class="fa fa-dashboard"> </i> Dashboard / Edit Coupon
+<i class="fa fa-dashboard"> </i> Painel / Editar Cupom
 
 </li>
 
-</ol><!-- breadcrumb Ends -->
+</ol><!-- breadcrumb Termina -->
 
-</div><!-- col-lg-12 Ends -->
+</div><!-- col-lg-12 Termina -->
 
-</div><!-- 1 row Ends -->
+</div><!-- 1 row Termina -->
 
-<div class="row"><!-- 2 row Starts --->
+<div class="row"><!-- 2 row Começa --->
 
-<div class="col-lg-12"><!-- col-lg-12 Starts -->
+<div class="col-lg-12"><!-- col-lg-12 Começa -->
 
-<div class="panel panel-default"><!-- panel panel-default Starts -->
+<div class="panel panel-default"><!-- panel panel-default Começa -->
 
-<div class="panel-heading"><!-- panel-heading Starts -->
+<div class="panel-heading"><!-- panel-heading Começa -->
 
-<h3 class="panel-title"><!-- panel-title Starts -->
+<h3 class="panel-title"><!-- panel-title Começa -->
 
-<i class="fa fa-money fa-fw"> </i> Edit Coupon
+<i class="fa fa-money fa-fw"> </i> Editar Cupom
 
-</h3><!-- panel-title Ends -->
+</h3><!-- panel-title Termina -->
 
-</div><!-- panel-heading Ends -->
+</div><!-- panel-heading Termina -->
 
-<div class="panel-body"><!--panel-body Starts -->
+<div class="panel-body"><!--panel-body Começa -->
 
-<form class="form-horizontal" method="post" action=""><!-- form-horizontal Starts -->
+<form class="form-horizontal" method="post" action=""><!-- form-horizontal Começa -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- form-group Começa -->
 
-<label class="col-md-3 control-label"> Coupon Title </label>
+<label class="col-md-3 control-label"> Título do Cupom </label>
 
 <div class="col-md-6">
 
@@ -102,11 +102,11 @@ $product_title = $row_products['product_title'];
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- form-group Começa -->
 
-<label class="col-md-3 control-label"> Coupon Price </label>
+<label class="col-md-3 control-label"> Preço do Cupom </label>
 
 <div class="col-md-6">
 
@@ -114,11 +114,11 @@ $product_title = $row_products['product_title'];
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- form-group Começa -->
 
-<label class="col-md-3 control-label"> Coupon Code </label>
+<label class="col-md-3 control-label"> Código do Cupom </label>
 
 <div class="col-md-6">
 
@@ -126,11 +126,11 @@ $product_title = $row_products['product_title'];
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- form-group Começa -->
 
-<label class="col-md-3 control-label"> Coupon Limit </label>
+<label class="col-md-3 control-label"> Limite do Cupom </label>
 
 <div class="col-md-6">
 
@@ -138,11 +138,11 @@ $product_title = $row_products['product_title'];
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- form-group Começa -->
 
-<label class="col-md-3 control-label"> Select Coupon For Product or Bundle </label>
+<label class="col-md-3 control-label"> Selecione o Cupom para Produto ou Pacote </label>
 
 <div class="col-md-6">
 
@@ -171,7 +171,7 @@ echo "<option value='$p_id'> $p_title </option>";
 
 <option></option>
 
-<option>Select Coupon for bundle</option>
+<option>Selecionar Cupom para pacote</option>
 
 <option></option>
 
@@ -197,29 +197,29 @@ echo "<option value='$p_id'> $p_title </option>";
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- form-group Começa -->
 
 <label class="col-md-3 control-label"> </label>
 
 <div class="col-md-6">
 
-<input type="submit" name="update" class=" btn btn-primary form-control" value=" Update Coupon ">
+<input type="submit" name="update" class=" btn btn-primary form-control" value=" Atualizar Cupom ">
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-</form><!-- form-horizontal Ends -->
+</form><!-- form-horizontal Termina -->
 
-</div><!--panel-body Ends -->
+</div><!--panel-body Termina -->
 
-</div><!-- panel panel-default Ends -->
+</div><!-- panel panel-default Termina -->
 
-</div><!-- col-lg-12 Ends -->
+</div><!-- col-lg-12 Termina -->
 
-</div><!-- 2 row Ends --->
+</div><!-- 2 row Termina --->
 
 <?php
 
@@ -242,7 +242,7 @@ $run_coupon = mysqli_query($con,$update_coupon);
 
 if($run_coupon){
 
-echo "<script>alert('One Coupon Has Been Updated')</script>";
+echo "<script>alert('Um Cupom Foi Atualizado')</script>";
 
 echo "<script>window.open('index.php?view_coupons','_self')</script>";
 

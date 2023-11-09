@@ -37,50 +37,49 @@ $new_p_cat_image = $row_edit['p_cat_image'];
 
 
 ?>
+<div class="row"><!-- 1 row Começa -->
 
-<div class="row"><!-- 1 row Starts -->
+<div class="col-lg-12"><!-- col-lg-12 Começa -->
 
-<div class="col-lg-12"><!-- col-lg-12 Starts -->
-
-<ol class="breadcrumb"><!-- breadcrumb Starts -->
+<ol class="breadcrumb"><!-- breadcrumb Começa -->
 
 <li>
 
-<i class="fa fa-dashboard"></i> Dashboard / Edit Product Category
+<i class="fa fa-dashboard"></i> Painel / Editar Categoria de Produto
 
 </li>
 
-</ol><!-- breadcrumb Ends -->
+</ol><!-- breadcrumb Termina -->
 
-</div><!-- col-lg-12 Ends -->
+</div><!-- col-lg-12 Termina -->
 
-</div><!-- 1 row Ends -->
+</div><!-- 1 row Termina -->
 
-<div class="row"><!-- 2 row Starts -->
+<div class="row"><!-- 2 row Começa -->
 
-<div class="col-lg-12"><!-- col-lg-12 Starts -->
+<div class="col-lg-12"><!-- col-lg-12 Começa -->
 
-<div class="panel panel-default"><!-- panel panel-default Starts -->
+<div class="panel panel-default"><!-- panel panel-default Começa -->
 
-<div class="panel-heading" ><!-- panel-heading Starts -->
+<div class="panel-heading" ><!-- panel-heading Começa -->
 
-<h3 class="panel-title" ><!-- panel-title Starts -->
+<h3 class="panel-title" ><!-- panel-title Começa -->
 
-<i class="fa fa-money fa-fw" ></i> Edit Product Category
+<i class="fa fa-money fa-fw" ></i> Editar Categoria de Produto
 
-</h3><!-- panel-title Ends -->
-
-
-</div><!-- panel-heading Ends -->
+</h3><!-- panel-title Termina -->
 
 
-<div class="panel-body" ><!-- panel-body Starts -->
+</div><!-- panel-heading Termina -->
 
-<form class="form-horizontal" action="" method="post" enctype="multipart/form-data" ><!-- form-horizontal Starts -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="panel-body" ><!-- panel-body Começa -->
 
-<label class="col-md-3 control-label" >Product Category Title</label>
+<form class="form-horizontal" action="" method="post" enctype="multipart/form-data" ><!-- form-horizontal Começa -->
+
+<div class="form-group" ><!-- form-group Começa -->
+
+<label class="col-md-3 control-label" >Título da Categoria de Produto</label>
 
 <div class="col-md-6" >
 
@@ -88,31 +87,31 @@ $new_p_cat_image = $row_edit['p_cat_image'];
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- form-group Começa -->
 
-<label class="col-md-3 control-label" >Show as Top Product Category</label>
+<label class="col-md-3 control-label" >Mostrar como Categoria de Produto Principal</label>
 
 <div class="col-md-6" >
 
 <input type="radio" name="p_cat_top" value="yes" 
 <?php if($p_cat_top == 'no'){}else{ echo "checked='checked'"; } ?>>
 
-<label> Yes </label>
+<label> Sim </label>
 
 <input type="radio" name="p_cat_top" value="no" 
 <?php if($p_cat_top == 'no'){ echo "checked='checked'"; }else{} ?>>
 
-<label> No </label>
+<label> Não </label>
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- form-group Começa -->
 
-<label class="col-md-3 control-label" > Select Product Category Image</label>
+<label class="col-md-3 control-label" > Selecionar Imagem da Categoria de Produto</label>
 
 <div class="col-md-6" >
 
@@ -124,30 +123,30 @@ $new_p_cat_image = $row_edit['p_cat_image'];
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- form-group Começa -->
 
 <label class="col-md-3 control-label" ></label>
 
 <div class="col-md-6" >
 
-<input type="submit" name="update" value="Update Now" class="btn btn-primary form-control" >
+<input type="submit" name="update" value="Atualizar Agora" class="btn btn-primary form-control" >
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- form-group Termina -->
 
-</form><!-- form-horizontal Ends -->
+</form><!-- form-horizontal Termina -->
 
-</div><!-- panel-body Ends -->
+</div><!-- panel-body Termina -->
 
 
-</div><!-- panel panel-default Ends -->
+</div><!-- panel panel-default Termina -->
 
-</div><!-- col-lg-12 Ends -->
+</div><!-- col-lg-12 Termina -->
 
-</div><!-- 2 row Ends -->
+</div><!-- 2 row Termina -->
 
 <?php
 
@@ -176,19 +175,15 @@ $run_p_cat = mysqli_query($con,$update_p_cat);
 
 if($run_p_cat){
 
-echo "<script>alert('Product Category has been Updated')</script>";
+echo "<script>alert('Categoria de Produto foi Atualizada')</script>";
 
 echo "<script>window.open('index.php?view_p_cats','_self')</script>";
 
 }
 
 
-
 }
 
-
-
 ?>
-
 
 <?php } ?>

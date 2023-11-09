@@ -12,6 +12,7 @@ $products = "shop.php";
 $contato = "contact.php";
 $logout = "logout.php";
 $checkout = "checkout.php";
+$sobrenos = "about.php";
 
 
 include("includes/db.php");
@@ -90,12 +91,10 @@ include("includes/main.php");
       experiência aos clientes,
       tornando a compra mais acessível e conveniente.
     </p>
-    <button>Sobre nós</button>
+    <a href="about.php"><button href="about.php">Sobre nós</button></a>
   </div>
   <div class="imagem">
-    <img
-      src="images/banner1.png"
-      alt="Produtos da Loja">
+    <img src="images/banner1.png" alt="Produtos da Loja">
   </div>
 </div>
 
@@ -330,13 +329,6 @@ include("includes/main.php");
         <?php echo date("Y"); ?> ADAPLAY&trade;
       </div>
 
-      <div class="developer">
-        All Rights Reserved
-      </div>
-
-      <div class="designby">
-        ADAPLAY
-      </div>
 
     </div>
   </div>

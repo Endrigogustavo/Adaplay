@@ -99,13 +99,6 @@
 				&copy; <?php echo date("Y"); ?> ADAPLAY&trade;
 			</div>
 
-			<div class="developer">
-				All Rights Reserved
-			</div>
-
-			<div class="designby">
-				ADAPLAY
-			</div>
 
 		</div>
 	</div>
